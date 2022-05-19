@@ -1,13 +1,17 @@
 {
   "name": "protect-secure",
+  "homepage": "https://julfinch.github.io/protect-secure/",
   "private": true,
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "gh-pages": "^4.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-icons": "^4.3.1",
