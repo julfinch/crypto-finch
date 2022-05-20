@@ -198,8 +198,10 @@
                     </Routes>
                </BrowserRouter>
           );
-     ```
-       
+    ```
+    
+---
+
 ## Installing YARN
 [https://www.digitalocean.com/community/tutorials/how-to-install-and-use-the-yarn-package-manager-for-node-js](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-the-yarn-package-manager-for-node-js)
 
@@ -220,6 +222,8 @@
 	`yarn init`
 	![](./_readme_img/yarn-2-protect-secure.png)
 8. This command line created a `package.json` and `readme.md` inside **\REACT\protect-secure**
+
+---
 
 ## Create VITE App
 [https://www.digitalocean.com/community/tutorials/how-to-set-up-a-react-project-with-vite](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-react-project-with-vite)
