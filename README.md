@@ -1,4 +1,4 @@
-# Data Secure Website
+# Data Protect Website
   -This react app was built using codesandbox.io 
   
 ## Table of contents
@@ -6,20 +6,21 @@
 - [Overview](#overview)
   - [Screenshot](#screenshot)
   - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
+- [Codesandbox React App](#codesandbox-react-app)
+- [Installing Yarn](#installing-yarn)
+- [Create VITE App](#create-vite-app)
 
 ## Overview
 
 ### Screenshot
 
-![](./screenshot.png)
+![](./_readme_img/protect-secure.png)
 
 ### Links
 
-- Live Site URL: [https://julfinch.github.io/secure-data/](https://julfinch.github.io/secure-data/)
+- Live Site URL: [https://frabjous-eclair-f01ccc.netlify.app/](https://frabjous-eclair-f01ccc.netlify.app/)
 
-## My process
+## Codesandbox React App
 
 1. Create a new sandbox:
 2. Rename the title with an appropriate name.
@@ -46,7 +47,7 @@
      - react-icons
      - react-scroll
      - react-router-dom
-7. Setting up the **Hmaburger menu** for the `<Navbar />` when screen is less than 940px:
+7. Setting up the **Hamburger menu** for the `<Navbar />` when screen is less than 940px:
      > import `{useState}` from 'react'
      ```js
           import React, {useState} from 'react'
@@ -122,7 +123,7 @@
 
 8. Setting up the **SCROLL TO TOP** function inside the `<Footer />` :
     - `import { BsFillArrowUpCircleFill } from 'react-icons/bs'`
-    -     ```js
+       ```js
                const Footer = () => {
                return (
                <div className='footer'>
@@ -197,52 +198,61 @@
                     </Routes>
                </BrowserRouter>
           );
-     ```
+    ```
+    
+---
 
-7. Open `App.js` and delete everything, only leave the following lines:
+## Installing YARN
+[https://www.digitalocean.com/community/tutorials/how-to-install-and-use-the-yarn-package-manager-for-node-js](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-the-yarn-package-manager-for-node-js)
+
+1. I checked first to see if I have a yarn installed and see what version it is: 
+	`yarn —version`
+2. Output is: 
+	`1.22.18`
+3. I am inside `C:\Users\lenovo\Documents\webdev1_Jul\REACT` and already have a pre-made folder inside it named **\protect-secure**, to navigatte to that directory, I wrote in the terminal : 
+	`cd protect-secure`
+4. I then set the version to berry to download the current, actively developedd version of Yarn: 
+	`yarn set version berry`
+	![](./_readme_img/yarn-1-protect-secure.png)
+5. To chech if indeed the latest berry was installed, I wrote:
+	`yarn --version`
+6. Result was :
+	`3.2.1`
+7. To start a new yarn project, I wrote:
+	`yarn init`
+	![](./_readme_img/yarn-2-protect-secure.png)
+8. This command line created a `package.json` and `readme.md` inside **\REACT\protect-secure**
+
+---
+
+## Create VITE App
+[https://www.digitalocean.com/community/tutorials/how-to-set-up-a-react-project-with-vite](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-react-project-with-vite)
+
+9. To start creating a VITE, I wrote:
+	`yarn create vite`
+10. It asked for a project name, I wrote:
+	`protect-secure`
+11. Then chose react on the following framework and variant:
+	`Select a framework: >> react`
+	`Select a variant: >> react`
+12. This resulted to another folder named **\protect-secure** inside another folder with the same name. The result was: `\webdev1_Jul\REACT\protect-secure\protect-secure`
+13. I opened the folder inside VSCode:
+	`cd protect-secure`
+14. Then install the dependencies:
+	`yarn`
+15. I met an error from here where it involves `yarn.lock` and `package.json` and it detects those files inside `C:\Users\lenovo` and is telling me to delete them.
+	![](./_readme_img/yarn-3-protect-secure.png)
+16. As a precaution, I just moved those 2 files that is inside it to another folder that I just made named **yarn and package json**. I wrote `yarn` again in the terminal but still the same error exists. Then I remembered that another `package.json` was created inside `webdev1_Jul\REACT\protect-secure` along with a `readme.md`. I moved both files inside a new folder I created inside `\REACT` named `from protect secure`. I ran `yarn` and it successfuly installed.
+18. To start the Development Server and see the live server, I wrote:
+ 	`yarn run dev`	
   
-      ```js
-      function App() {
-        return (
-          <>
-          </>
-        );
-        }
-        export default App;
-       ```
-       
-### Deployment of Create-React-App to Github
- 1. Write in the terminal:
-      >`npm install gh-pages --save-dev`
- 2. A **build folder** and **package.json** will be automatically created, open **package.json** and add the following:
-      ```js
-      "homepage": "https://julfinch.github.io/shortly/",
-      ```
-      Under scripts, add: 
-      ```js
-       "predeploy": "npm run build",
-       "deploy": "gh-pages -d build",
-            **BE MINDFUL OF THE COMMA TO AVOID ERRORS!**
-            
-       ```
- 3. Go the Github website and create a new repository with the same name as the folder `secure-data`.
- 4. Write in the terminal:
-      >`git init`
-      > then...
-      >`git remote add origin https://github.com/julfinch/shortly.git`
- 5. Then lastly:
-      >`npm run deploy`
- 6. The message should show **Published**.
-
-
 ### Built with
 
 - Semantic HTML5 markup
 - CSS custom properties
-- Flexbox
+- React Router DOM
 - ReactJS
 - Vite
-- Tailwind CSS
 
 ---
  
