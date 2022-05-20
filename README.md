@@ -7,8 +7,8 @@
   - [Screenshot](#screenshot)
   - [Links](#links)
 - [Codesandbox React App](#codesandbox-react-app)
-- [Installing Yarn] (#installing-yarn)
-- [Create VITE App] (#create-vite-app)
+- [Installing Yarn](#installing-yarn)
+- [Create VITE App](#create-vite-app)
 
 ## Overview
 
@@ -123,7 +123,7 @@
 
 8. Setting up the **SCROLL TO TOP** function inside the `<Footer />` :
     - `import { BsFillArrowUpCircleFill } from 'react-icons/bs'`
-    -     ```js
+       ```js
                const Footer = () => {
                return (
                <div className='footer'>
