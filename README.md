@@ -220,6 +220,7 @@
 	`3.2.1`
 7. To start a new yarn project, I wrote:
 	`yarn init`
+	⚠**YOU CAN TOTALLY SKIP THIS `yarn.init` PROCESS. THIS CREATES A `.gitignore` ,`package.json` ,`README.md`, AND `yarn.lock`. THE REASON FOR THE ERROR BELOW. 
 	![](./_readme_img/yarn-2-protect-secure.png)
 8. This command line created a `package.json` and `readme.md` inside **\REACT\protect-secure**
 
@@ -240,6 +241,7 @@
 	`cd protect-secure`
 14. Then install the dependencies:
 	`yarn`
+	⚠ **THIS PROCESS CREATES `vite.config.js`, `.yarn folder`, AND `node_modules folder`**
 15. I met an error from here where it involves `yarn.lock` and `package.json` and it detects those files inside `C:\Users\lenovo` and is telling me to delete them.
 	![](./_readme_img/yarn-3-protect-secure.png)
 16. As a precaution, I just moved those 2 files that is inside it to another folder that I just made named **yarn and package json**. I wrote `yarn` again in the terminal but still the same error exists. Then I remembered that another `package.json` was created inside `webdev1_Jul\REACT\protect-secure` along with a `readme.md`. I moved both files inside a new folder I created inside `\REACT` named `from protect secure`. I ran `yarn` and it successfuly installed.
