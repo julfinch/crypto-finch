@@ -1,6 +1,6 @@
 # Data Protect Website
   - Live Site URL: [https://dataprotect-julfinch.netlify.app/](https://dataprotect-julfinch.netlify.app/)
-  -This react app was built using codesandbox.io 
+  - This react app was built using codesandbox.io 
   
 ## Table of contents
 
