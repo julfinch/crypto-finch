@@ -1,18 +1,56 @@
-import "./index.css";
-import Navbar from "./components/navbar/Navbar";
-import Hero from "./components/hero/Hero";
-import Data from "./components/data/Data";
-import Cloud from "./components/cloud/Cloud";
-import Footer from "./components/footer/Footer";
+import React from "react";
+import { Switch, Route, Link } from "react-router-dom";
+import { Layout, Typography, Space } from "antd";
+import { Exchanges, GlobalPage, Homepage, News, Cryptocurrencies, CryptoDetails, Navbar } from './components';
 
 export default function App() {
   return (
-    <>
-      <Navbar />
-      <Hero />
-      <Data />
-      <Cloud />
-      <Footer />
-    </>
+    <div className="app-container">
+    <div className="app">
+      <div className="navbar">
+        <Navbar/>
+      </div>
+      <div className="main">
+      <Layout>
+        <div className="routes">
+          <Switch>
+            <Route exact path="/">
+              <Homepage />
+            </Route>
+            <Route exact path="/global">
+              <GlobalPage />
+            </Route>
+            <Route exact path="/exchanges">
+              <Exchanges />
+            </Route>
+            <Route exact path="/cryptocurrencies">
+              <Cryptocurrencies />
+            </Route>
+            <Route exact path="/crypto/:coinId">
+              <CryptoDetails />
+            </Route>
+            <Route exact path="/news">
+              <News />
+            </Route>
+          </Switch>
+        </div>
+      </Layout>
+      
+      <div className="footer">
+        <Typography.Title level={5} style={{ color: 'white', textAlign: 'center' }}>Copyright © 2021 
+            <Link to="/">
+              Crypto Finch Inc.
+            </Link> <br />
+            All Rights Reserved.
+          </Typography.Title>
+          <Space>
+            <Link to="/">Home</Link>
+            <Link to="/exchanges">Exchanges</Link>
+            <Link to="/news">News</Link>
+          </Space>
+      </div>
+      </div>
+    </div>
+    </div>
   );
 }
