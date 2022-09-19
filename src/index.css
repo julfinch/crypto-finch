@@ -111,10 +111,17 @@ a:hover{
 .news-image-container {
   max-height: 130px !important;
   margin-bottom: 30px;
+  gap: 0.2rem;
 }
 
 .news-image-container > img {
   aspect-ratio: 9/11;
+}
+
+.news-image-container > .ant-typography {
+  line-height: 1;
+  font-weight: 400;
+  font-size: 16px;
 }
 
 .news-card p {
@@ -125,6 +132,18 @@ a:hover{
   align-items: center  !important;
   font-size: 10px;
   margin-top: 20px;
+}
+
+/* CRYPTO-DETAILS*/
+.chart-card-container{
+  width: 1011px;
+}
+.coin-name-desc{
+  font-size: 14px !important;
+}
+
+.ant-input::selection{
+  background-color: #2a2b47;
 }
 
 .loader{
@@ -209,7 +228,7 @@ a:hover{
 }
 
 .coin-heading-container .coin-name{
-  font-weight: 900;
+  font-weight: 600;
   color: var(--pink);
 }
 
@@ -234,29 +253,41 @@ a:hover{
 }
 
 .coin-details-heading{
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   margin-top: 20px !important;
-  color: var(--pink) !important;
+  color: var(--text-primary) !important;
 }
+
+.coin-details-heading>h3 {
+  color: var(--text-primary) !important;
+}
+.coin-details-desc {
+  font-size: 14px !important;
+}
+
 
 .coin-stats{
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid var(--border);
-  font-size: 1rem;
+  font-size: 14px;
   opacity: 0.9;
-  padding: 20px;
+  padding: 9px;
 
 }
 
 .coin-stats-name{
   display: flex;
   gap: 10px;
-  font-size: 1rem;
+  font-size: 14px;
 }
 
 .stats{
-  font-weight: 800;
+  font-weight: 600;
+}
+
+.coin-value-statistics, .other-stats-info{
+  margin: -15px -10px 20px !important;
 }
 
 .coin-value-statistics-heading p{
@@ -381,10 +412,10 @@ width: 70%;
   display: flex;
   justify-content: space-between;
   gap: 50px;
-  color: #0071bd;
+  color: #fff;
 }
 .chart-title{
-  color: #0071bd !important;
+  color: #fff !important;
 }
 .price-container{
   display: flex !important;
@@ -393,11 +424,11 @@ width: 70%;
   flex-wrap: wrap !important;
 }
 .price-change{
-  font-weight: 900 !important;
+  font-weight: 500 !important;
 }
 .current-price{
   margin-top: 0px !important;
-  font-weight: 900 !important;
+  font-weight: 500 !important;
 }
 .home-heading-container{
   display: flex;
@@ -414,10 +445,12 @@ width: 70%;
 .search-crypto{
   margin: 20px auto 30px auto;
   width: 250px;
+  background-color: #2b2f48 !important;
 }
 .crypto-card-container{
   min-height: 65vh !important;
 }
+
 .crypto-card{
   min-width: 250px;
 }
