@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import { Layout, Typography, Space } from "antd";
-import { Exchanges, GlobalPage, Homepage, News, Cryptocurrencies, CryptoDetails, Navbar } from './components';
+import { Chart, GlobalPage, Homepage, News, Cryptocurrencies, CryptoDetails, Navbar } from './components';
 
 export default function App() {
   return (
@@ -20,8 +20,8 @@ export default function App() {
             <Route exact path="/global">
               <GlobalPage />
             </Route>
-            <Route exact path="/exchanges">
-              <Exchanges />
+            <Route exact path="/chart">
+              <Chart />
             </Route>
             <Route exact path="/cryptocurrencies">
               <Cryptocurrencies />

@@ -42,11 +42,11 @@ const Navbar = () => {
         <Menu.Item icon={<GlobalOutlined />}>
           <Link to="/global">Global</Link>
         </Menu.Item>
-        <Menu.Item icon={<FundOutlined />}>
+        <Menu.Item icon={<MoneyCollectOutlined/>}>
           <Link to="/cryptocurrencies">Cryptocurrencies</Link>
         </Menu.Item>
-        <Menu.Item icon={<MoneyCollectOutlined />}>
-          <Link to="/exchanges">Exchanges</Link>
+        <Menu.Item icon={<FundOutlined  />}>
+          <Link to="/chart">Chart</Link>
         </Menu.Item>
         <Menu.Item icon={<BulbOutlined />}>
           <Link to="/news">News</Link>
