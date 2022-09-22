@@ -16,6 +16,10 @@
   font-family: Poppins;
 }
 
+body{
+  background: #383d5d !important;
+}
+
 a:hover{
   color: var(--pink) !important;
 }
