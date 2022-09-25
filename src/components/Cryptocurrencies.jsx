@@ -7,7 +7,7 @@ import { useGetCryptosQuery } from '../services/cryptoApi';
 import Loader from './Loader';
 
 const Cryptocurrencies = ({ simplified }) => {
-  const count = simplified ? 10 : 100;
+  const count = simplified ? 12 : 100;
   const { data: cryptosList, isFetching } = useGetCryptosQuery(count);
   const [cryptos, setCryptos] = useState();
   const [searchTerm, setSearchTerm] = useState('');
@@ -23,7 +23,7 @@ const Cryptocurrencies = ({ simplified }) => {
   if (isFetching) return <Loader />;
 
   return (
-    <>
+    <Col className="cryptocurrencies-container">
       {!simplified && (
         <div className="search-crypto" style={{backgroundColor: '#2b2f48'}}>
           <Input
@@ -33,7 +33,7 @@ const Cryptocurrencies = ({ simplified }) => {
           />
         </div>
       )}
-      <Row gutter={[32, 32]} className="crypto-card-container">
+      <Row gutter={[32, 32]} justify="space-between" className="crypto-card-container">
         {cryptos?.map((currency) => (
           <Col
             xs={24}
@@ -59,7 +59,7 @@ const Cryptocurrencies = ({ simplified }) => {
           </Col>
         ))}
       </Row>
-    </>
+    </Col>
   );
 };
 

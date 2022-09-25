@@ -17,7 +17,7 @@ const GlobalPage = () => {
   if (isFetching) return <Loader />;
 
   return (
-    <>
+    <Col className="global-container">
       <Title level={3} className="heading">Global Crypto Stats</Title>
       <Card className="global-heading-card">
         <Row gutter={[32, 32]}>
@@ -30,7 +30,7 @@ const GlobalPage = () => {
         </Row>
       </Card>
       <div className="home-heading-container">
-        <Title level={3} className="home-title">Top 10 Cryptos In The World</Title>
+        <Title level={3} className="home-title">Top 12 Cryptos In The World</Title>
         <Title level={5} className="show-more"><Link to="/cryptocurrencies">Show more</Link></Title>
       </div>
       <Cryptocurrencies simplified />
@@ -39,7 +39,7 @@ const GlobalPage = () => {
         <Title level={5}><Link to="/news">Show more</Link></Title>
       </div>
       <News simplified />
-    </>
+    </Col>
   );
 };
 

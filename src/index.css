@@ -17,7 +17,7 @@
 }
 
 body{
-  background: #383d5d !important;
+  background: #1d203f !important;
 }
 
 a:hover{
@@ -39,8 +39,13 @@ a:hover{
   width: 100%;
 }
 .routes{
-  padding: 20px;
   background-color: #1d203f;
+}
+.global-container,
+.cryptocurrencies-container,
+.coin-detail-container,
+.news-container{
+  padding: 20px;
 }
 .nav-container{
   position: fixed;
@@ -77,10 +82,134 @@ a:hover{
 .ant-typography {
   margin-top: 0em !important;
 }
+/* HOMEPAGE */
+.header-container{
+  background: #2b2f48 !important;
+  height: 50px !important;
+  padding: 12px 20px !important;
+}
+.header-container .ant-input,
+.header-container .ant-input-affix-wrapper,
+.header-container .ant-btn{
+  background: #292c48 !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  color: #fff !important;
+  font-weight: 200;
+}
+.header-container .ant-input-affix-wrapper{
+  border-radius: 10px 0 0 10px !important;
+}
+.header-container .ant-input-group-addon,
+.header-container .ant-btn-sm{
+  border-radius: 0 10px 10px 0 !important;
+}
+.main-container{
+  background-color: #1d203f;
+  padding: 20px;
+}
+.main-heading-card{
+  background: url('./images/home_bg.jpg') !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: bottom !important; 
+  box-shadow: 0.5px 15.5px 14px 1px #131427 !important;
+  border-radius: 15px !important;
+  color: #000 !important;
+  font-size: 13px !important;
+  font-weight: 200 !important;
+  line-height: 1.3 !important;
+  width: 100%;
+  height: 160px;
+}
+.main-heading-title{
+  color: #000 !important;
+}
+.nft-collection-wrapper{
+  position: relative !important;
+}
+.my-nft-collection{
+  padding: -100px !important;
+  font-size: 7px !important;
+}
+.nft-title-heading{
+  right: 0px !important;
+  top: 9px !important;
+  position: absolute !important;
+}
+.sidebar-container{
+  background: #2b2f48 !important;
+  min-width: 250px !important;
+  border-left: 1px solid pink;
+}
+.sidebar-user{
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-betweeen !important;
+  height: 50px !important;
+  padding: 0 10px !important;
+  border: 1px solid rgba(255,255,255, 0.1) !important;
+}
+
+.sidebar-assets{
+  padding: 0 10px;
+}
+.home-chart-card{
+  margin-left: 4px !important;
+}
+.home-chart-card .ant-card-body{
+  padding: 6px;
+}
+.home-chart-card .ant-card-body > canvas{
+  height: 170px !important;
+  width: 480px !important;
+}
+.sidebar-container{
+  color: #fff !important;
+}
+.sidebar-user-right{
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-evenly;
+}
+.sidebar-profile{
+  pointer-events: none !important;
+  width: 100% !important;
+}
+.sidebar-profile .ant-card-meta-title{
+  color: #fff !important;
+}
+.sidebar-profile .ant-card-meta-detail > div:not(:last-child) {
+  margin-bottom: -5px;
+}
+.sidebar-profile .ant-card-meta-description{
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+.assets-image{
+  width: 50px;
+  margin-top: -10px;
+}
+.assets-card{
+  background: #f58cf4;
+  background: -webkit-linear-gradient(147deg, #f58cf4 0%, #92a0f2 80%, #c9edf6 100%);
+  background: linear-gradient(147deg, #f58cf4 0%, #92a0f2 80%, #c9edf6 100%);
+  box-shadow: 0.5px 15.5px 14px 1px #131427 !important;
+  border-radius: 10px !important;
+  color: #000 !important;
+  font-size: 10px !important;
+  font-weight: 400 !important;
+  line-height: 0.4 !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 20px 0px;
+  align-items: center;
+}
 
 /* CHART */
 .chart-container{
-  height: 95vh;
+  height: 100vh;
 }
 
 /* GLOBAL PAGE */
@@ -105,7 +234,12 @@ a:hover{
   color: #fff !important;
 }
 
-.cryptocurrencies-card{
+.cryptocurrencies-card,
+.stats-card,
+.chart-card-container,
+.coin-desc-card,
+.my-nft-collection,
+.home-chart-card{
   background: #383d5d !important;
   box-shadow: 0.5px 15.5px 14px 1px #131427 !important;
   border-radius: 15px !important;
@@ -119,9 +253,23 @@ a:hover{
   color: #fff !important;
   border-bottom: 1px solid #2b2f48 !important;
 }
+.ant-tabs{
+  color: #fff !important;
+}
+.ant-tabs-tab{
+  font-size: 12px !important;
+}
+.my-nft-collection .ant-card-body{
+  padding: 5px 8px 0px !important;
+  font-size: 10px !important;
+  line-height: 1 !important;
+}
 
-.ant-card-body {
-  padding: 20px 24px 8px !important;
+.crypto-card .ant-card-body{
+  padding: 10px 24px 0px !important;
+}
+.news-card{
+  padding: 0px 0px 0px !important;
 }
 
 .ant-card-bordered {
@@ -274,6 +422,7 @@ a:hover{
   justify-content: space-between;
   align-items: center;
   gap: 40px;
+  padding: -40px !important;
 }
 
 .stats-container h2{
@@ -484,7 +633,9 @@ width: 70%;
 }
 
 .crypto-card{
-  min-width: 250px;
+  max-width: 240px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
 }
 .crypto-card .crypto-image{
   width:35px;
