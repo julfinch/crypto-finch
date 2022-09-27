@@ -53,21 +53,39 @@ a:hover{
   margin: 10px;
   height: 100vh;
   margin: 0px;
-  background-color: rgb(0, 21, 41);
+  background-color: rgba(16, 7,71, 1);
+  overflow: hidden;
+}
+.nav-container .ant-menu-vertical .ant-menu-item, .ant-menu-vertical-left .ant-menu-item, .ant-menu-vertical-right .ant-menu-item, .ant-menu-inline .ant-menu-item, .ant-menu-vertical .ant-menu-submenu-title, .ant-menu-vertical-left .ant-menu-submenu-title, .ant-menu-vertical-right .ant-menu-submenu-title, .ant-menu-inline .ant-menu-submenu-title {
+  height: 40px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding: 0 30px !important;
+  overflow: hidden;
+  line-height: 40px;
+  text-overflow: ellipsis;
 }
 
 .logo-container{
-  background-color: #001529;
+  background-color: #100747;
   display: flex;
-  padding: 20px;
+  padding: 20px 20px 0px !important;
   align-items: center;
   width: 100%;
+  z-index: 100 !important;
+  position: relative !important;
+}
+.logo-container h2{
+  margin-bottom: 0em !important;
 }
 .logo{
   margin:0 0 0 15px;
 }
 .logo a{
- color: white;
+ color: rgb(76, 221, 242) !important;
+}
+.nav-container .ant-menu-vertical .ant-menu-item::after, .ant-menu-vertical-left .ant-menu-item::after, .ant-menu-vertical-right .ant-menu-item::after, .ant-menu-inline .ant-menu-item::selection .ant-menu-item-selected::selection {
+  background: rgba(16, 7,71, 1) !important;
 }
 .menu-control-container{
   display: none !important;
@@ -77,8 +95,82 @@ a:hover{
   font-size: 1.2rem !important;
   background-color: var(--bgSecondary) !important;
   border: none !important;
+  z-index: 10 !important;
 }
-
+.ant-menu.ant-menu-dark, .ant-menu-dark .ant-menu-sub, .ant-menu.ant-menu-dark .ant-menu-sub {
+  background: #100747 !important;
+  z-index: 10 !important;
+  position: relative;
+}
+.ant-menu.ant-menu-dark .ant-menu-item-selected, .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected {
+  background-color: rgb(228,76,242);
+  width: 240px;
+  margin-left: 15px !important;
+  border-radius: 10px;
+  background: linear-gradient(90deg, rgb(228, 76, 242) 20%, rgb(76, 221, 242) 100%);
+}
+.nav-container .ant-menu-vertical .ant-menu-item, .ant-menu-vertical-left .ant-menu-item, .ant-menu-vertical-right .ant-menu-item, .ant-menu-inline .ant-menu-item, .ant-menu-vertical .ant-menu-submenu-title, .ant-menu-vertical-left .ant-menu-submenu-title, .ant-menu-vertical-right .ant-menu-submenu-title, .ant-menu-inline .ant-menu-submenu-title {
+  padding-left: 20px !important;
+  margin-left: 15px !important;
+}
+.nav-ads-card{
+  width: 240px !important;
+  padding-left: 0px !important;
+  margin-left: 15px !important;
+  background: url('./images/line.svg') center right !important;
+  background-color: rgba(26, 7,110, 1) !important;
+  box-shadow: 0.5px 15.5px 14px 1px #131427 !important;
+  color: #fff !important;
+  font-size: 13px !important;
+  font-weight: 200 !important;
+  line-height: 1.3 !important;
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important; 
+  overflow: hidden;
+}
+.nav-ads-card .nav-card-title-1{
+  color: rgba(255,255,255,0.5) !important;
+  font-weight: 300;
+  margin: 0 0 3px;
+  font-size: 11px !important;
+}
+.nav-ads-card .nav-card-title-2{
+  color: rgb(76, 221, 242) !important;
+}
+.nav-ads-cc{
+  width: 98% !important;
+  margin-bottom: -40px !important;
+  z-index: 10 !important;
+}
+.circles{
+  position: relative;
+}
+.bg-circles{
+  height: 20px;
+  width: 20px;
+  border-radius: 50px;
+  background: #8419e8;
+  border: 1px solid #8419e8;
+  position: absolute;
+  -webkit-box-shadow: -1px -1px 62px 122px #8419e8;
+  -moz-box-shadow: -1px -1px 62px 122px #8419e8;
+  box-shadow: -1px -1px 62px 122px #8419e8;
+}
+.circle-1{
+  top: -70px;
+  z-index: -1;
+}
+.circle-2{
+  top: 70%;
+  right: -90px;
+  z-index: -1;
+}
+.circle-3{
+  bottom: -70px;
+  left: 30%;
+  z-index: 1;
+}
 .ant-typography {
   margin-top: 0em !important;
 }
@@ -86,7 +178,7 @@ a:hover{
 .header-container{
   background: #2b2f48 !important;
   height: 50px !important;
-  padding: 12px 20px !important;
+  padding: 12px 0px !important;
 }
 .header-container .ant-input,
 .header-container .ant-input-affix-wrapper,
@@ -105,7 +197,7 @@ a:hover{
 }
 .main-container{
   background-color: #1d203f;
-  padding: 20px;
+  padding: 13px 20px;
 }
 .main-heading-card{
   background: url('./images/home_bg.jpg') !important;
@@ -124,6 +216,13 @@ a:hover{
 .main-heading-title{
   color: #000 !important;
 }
+.heading-explore-button,
+.sidebar-button{
+  background: rgb(228,76,242) !important;
+  background: linear-gradient(90deg, rgba(228,76,242,1) 20%, rgba(76,221,242,1) 100%) !important; 
+}
+
+/* NFT COLLECTION*/
 .nft-collection-wrapper{
   position: relative !important;
 }
@@ -132,8 +231,9 @@ a:hover{
   font-size: 7px !important;
 }
 .nft-title-heading{
+  font-size: 13px !important;
   right: 0px !important;
-  top: 9px !important;
+  top: 12px !important;
   position: absolute !important;
 }
 .sidebar-container{
@@ -150,20 +250,63 @@ a:hover{
   padding: 0 10px !important;
   border: 1px solid rgba(255,255,255, 0.1) !important;
 }
+.sidebar-user-badge{
+  font-size: 19px;
+  color: gray !important;
+  cursor: pointer !important;
+}
+.sidebar-user-badge:hover{
+  color: cyan !important;
+}
 
-.sidebar-assets{
+.sidebar-assets,
+.sidebar-transactions{
   padding: 0 10px;
 }
 .home-chart-card{
-  margin-left: 4px !important;
+  margin-left: 7px !important;
 }
 .home-chart-card .ant-card-body{
   padding: 6px;
 }
 .home-chart-card .ant-card-body > canvas{
   height: 170px !important;
-  width: 480px !important;
+  width: 380px !important;
 }
+.home-donut-card{
+  margin-left: 2px !important;
+}
+.home-donut-card .ant-card-body{
+  padding: 4px;
+}
+.home-donut-card .ant-card-body > canvas{
+  height: 165px !important;
+  width: 180px !important;
+}
+.home-transactions-card .ant-card-body{
+  padding: 12px !important;
+}
+.home-transactions-card .ant-list-item {
+  padding: 2.5px 0;
+}
+.transactions-title,
+.nav-card-title-2{
+  font-size: 13px !important;
+}
+.transactions-list-item .ant-list-item-meta-title {
+  color: #fff;
+  font-size: 12px;
+  line-height: 1;
+  margin-bottom: 0px;
+}
+.transactions-content,
+.transactions-list-item .ant-list-item-meta-description {
+  color: #fff;
+  font-size: 11px;
+  line-height: 1.5715;
+}
+
+/* SIDEBAR */
 .sidebar-container{
   color: #fff !important;
 }
@@ -190,13 +333,25 @@ a:hover{
   width: 50px;
   margin-top: -10px;
 }
+.sidebar-port .ant-card-body{
+  padding: 10px 14px;
+}
+.sidebar-transactions {
+  margin-top: 20px !important;
+}
+.sidebar-port-buttons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: -20px;
+}
 .assets-card{
-  background: #f58cf4;
-  background: -webkit-linear-gradient(147deg, #f58cf4 0%, #92a0f2 80%, #c9edf6 100%);
-  background: linear-gradient(147deg, #f58cf4 0%, #92a0f2 80%, #c9edf6 100%);
+  background: #383d5d !important;
   box-shadow: 0.5px 15.5px 14px 1px #131427 !important;
   border-radius: 10px !important;
-  color: #000 !important;
+  color: #fff !important;
   font-size: 10px !important;
   font-weight: 400 !important;
   line-height: 0.4 !important;
@@ -239,7 +394,10 @@ a:hover{
 .chart-card-container,
 .coin-desc-card,
 .my-nft-collection,
-.home-chart-card{
+.home-chart-card,
+.home-donut-card,
+.home-transactions-card,
+.sidebar-port{
   background: #383d5d !important;
   box-shadow: 0.5px 15.5px 14px 1px #131427 !important;
   border-radius: 15px !important;
@@ -433,6 +591,7 @@ a:hover{
 }
 
 .coin-details-heading{
+  font-size: 14px !important;
   font-weight: 600 !important;
   margin-top: 20px !important;
   color: var(--text-primary) !important;
@@ -630,6 +789,7 @@ width: 70%;
 }
 .crypto-card-container{
   min-height: 65vh !important;
+  padding: 15px;
 }
 
 .crypto-card{

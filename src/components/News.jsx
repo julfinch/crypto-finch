@@ -21,9 +21,10 @@ const News = ({ simplified }) => {
   return (
     <Row gutter={[24, 24]} className="news-container">
       {!simplified && (
-        <Col span={24}>
+        <Col span={24} >
           <Select
             showSearch
+            style={{ color: 'rgba(255, 255, 255, 1)', backgroundColor: '#2a2b47', border: '1px solid #515369',}}
             className="select-news"
             placeholder="Select a Crypto"
             optionFilterProp="children"

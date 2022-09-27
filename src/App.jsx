@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import { Layout, Typography, Space } from "antd";
-import { Chart, GlobalPage, Homepage, News, Cryptocurrencies, CryptoDetails, Navbar } from './components';
+import { Chart, GlobalPage, Nft, Homepage, News, Cryptocurrencies, CryptoDetails, Navbar } from './components';
 
 export default function App() {
   return (
@@ -19,6 +19,9 @@ export default function App() {
             </Route>
             <Route exact path="/global">
               <GlobalPage />
+            </Route>
+            <Route exact path="/nft">
+              <Nft />
             </Route>
             <Route exact path="/chart">
               <Chart />
