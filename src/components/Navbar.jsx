@@ -3,9 +3,8 @@ import { Button, Menu, Typography, Avatar, Card } from 'antd';
 import { Link } from 'react-router-dom';
 import { HomeOutlined, InfoCircleOutlined, CloseOutlined, GlobalOutlined, LogoutOutlined, DeploymentUnitOutlined, MoneyCollectOutlined, BulbOutlined, FundOutlined, MenuOutlined } from '@ant-design/icons';
 
-import icon from '../images/cryptocurrency.png';
+import icon from '../images/logo.png';
 import card from '../images/card1.svg';
-import line from '../images/line.svg';
 
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(true);
@@ -34,7 +33,7 @@ const Navbar = () => {
       <div className="logo-container">
         <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
           <Avatar src={icon} size="medium" />
-          <Typography.Title level={2} className="logo"><Link to="/">IoDeX</Link></Typography.Title>
+          <Typography.Title level={2} className="logo"><Link to="/">NeuBlock</Link></Typography.Title>
         </div>
         <Button className="menu-control-container" onClick={() => setActiveMenu(!activeMenu)}><MenuOutlined /></Button>
       </div>
@@ -61,20 +60,23 @@ const Navbar = () => {
         </Menu.Item>
 
         {/*CARD */}
-        <Card className="nav-ads-card" style={{width: '185px', height: '180px'}}>
+        <Card className="nav-ads-card" style={{width: '185px', height: '180px',marginTop: '100px'}}>
         <CloseOutlined style={{marginBottom: '18px'}}/>
         <Typography.Title level={4} className="nav-card-title-1">Your credit card is almost ready!</Typography.Title>
         <Typography.Title level={4} className="nav-card-title-2">Continue Setup</Typography.Title>
         <img className="nav-ads-cc" src={card} />
         </Card>
 
+        {/* 
         <Menu.Item style={{marginTop: '20px'}} icon={<InfoCircleOutlined />}>
           <Link to="/help">Help - FAQ</Link>
         </Menu.Item>
         <Menu.Item icon={<LogoutOutlined />}>
           <Link to="/logout">Log Out</Link>
         </Menu.Item>
+        */}
       </Menu>
+        
       )}
     </div>
   );

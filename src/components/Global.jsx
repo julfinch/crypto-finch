@@ -13,7 +13,7 @@ const { Title } = Typography;
 const GlobalPage = () => {
   const { data, isFetching } = useGetCryptosQuery(10);
   const globalStats = data?.data?.stats;
-
+  console.log(data);
   if (isFetching) return <Loader />;
 
   return (
@@ -33,12 +33,17 @@ const GlobalPage = () => {
         <Title level={3} className="home-title">Top 12 Cryptos In The World</Title>
         <Title level={5} className="show-more"><Link to="/cryptocurrencies">Show more</Link></Title>
       </div>
-      <Cryptocurrencies simplified />
+      <div className="global-components-container">
+        <Cryptocurrencies simplified/>
+      </div>
+      
       <div className="home-heading-container">
         <Title level={3} className="home-title">Latest Crypto News</Title>
         <Title level={5}><Link to="/news">Show more</Link></Title>
       </div>
-      <News simplified />
+      <div className="global-components-container">
+        <News simplified />
+      </div>
     </Col>
   );
 };

@@ -8,9 +8,10 @@ import icon1 from "../images/Polygon.svg";
 import icon2 from "../images/Tron.svg";
 import icon3 from "../images/Cardano.svg";
 import HomeLinechart from "./HomeLinechart";
+import { Link } from 'react-router-dom';
 import HomeDonut from "./HomeDonut";
 import { zodiacData, dawgzData, monkiesData, assetsData, topData } from "../images/dummy";
-
+import Loader from './Loader';
 const { Meta } = Card;
 const { Header, Content, Sider } = Layout;
 const { Search } = Input;
@@ -44,11 +45,9 @@ const data = [
 
 const Homepage = () => {
   const [open, setOpen] = useState(false);
-
   const showDrawer = () => {
     setOpen(true);
   };
-
   const onClose = () => {
     setOpen(false);
   };
@@ -84,8 +83,12 @@ const Homepage = () => {
                   <Typography.Title level={3} className="main-heading-title">Discover, Collect, and Sell</Typography.Title>
                   <Typography.Title level={3} className="main-heading-title">Extraordinary NFTs</Typography.Title>
                   <Row>
-                  <Button className="heading-explore-button" style={{ fontSize: '11px',borderRadius: '6px', marginRight: '10px'}}>Explore More</Button>
-                  <Button type="ghost" style={{ fontSize: '11px',borderRadius: '6px', color: '#fff'}}>Sell Artwork</Button>
+                    <Link to="/nft">
+                      <Button className="heading-explore-button" style={{ fontSize: '11px', color: '#fff',borderRadius: '6px', marginRight: '10px', border: '0px'}}>Explore More</Button>
+                    </Link>
+                    <Link to="/nft">
+                      <Button type="ghost" style={{ fontSize: '11px',borderRadius: '6px', color: '#fff'}}>Sell Artwork</Button>
+                    </Link>
                   </Row>
                 </Row>
               </Card>
@@ -98,7 +101,7 @@ const Homepage = () => {
                     <Row gutter={164}>
                       {topData?.map((top) => (
                       <Col span={4} key={top.name}>
-                        <Card className="my-nft-collection" hoverable style={{width: 140, height: 145,}} cover={<img alt={top.name} src={top.image} style={{borderRadius: '15px 15px 0 0'}}/>}>
+                        <Card className="my-nft-collection" hoverable style={{width: 140, height: 145,}} cover={<img alt={top.name} src={top.image} style={{border: '1px solid transparent',borderRadius: '15px 15px 0 0'}}/>}>
                         <p style={{fontWeight: '500', color: 'cyan'}}>{top.name}</p>
                         <p style={{fontWeight: '200',marginTop: '-5px'}}>Current price: <span style={{fontWeight: '500'}}>{top.price}</span></p>
                         </Card>
@@ -110,7 +113,7 @@ const Homepage = () => {
                     <Row gutter={3}>
                       {monkiesData?.map((monkies) => (
                       <Col span={6} key={monkies.name}>
-                        <Card className="my-nft-collection" hoverable style={{width: 141, height: 145,}} cover={<img alt={monkies.name} src={monkies.image} style={{borderRadius: '15px 15px 0 0'}}/>}>
+                        <Card className="my-nft-collection" hoverable style={{width: 141, height: 145,}} cover={<img alt={monkies.name} src={monkies.image} style={{border: '1px solid transparent',borderRadius: '15px 15px 0 0'}}/>}>
                         <p style={{fontWeight: '500', color: 'cyan'}}>{monkies.name}</p>
                         <p style={{fontWeight: '200',marginTop: '-5px'}}>Current price: <span style={{fontWeight: '500'}}>{monkies.price}</span></p>
                         </Card>
@@ -122,7 +125,7 @@ const Homepage = () => {
                     <Row gutter={3}>
                       {zodiacData?.map((zodiac) => (
                       <Col span={6} key={zodiac.name}>
-                        <Card className="my-nft-collection" hoverable style={{width: 140, height: 145,}} cover={<img alt={zodiac.name} src={zodiac.image} style={{borderRadius: '15px 15px 0 0'}}/>}>
+                        <Card className="my-nft-collection" hoverable style={{width: 140, height: 145,}} cover={<img alt={zodiac.name} src={zodiac.image} style={{border: '1px solid transparent',borderRadius: '15px 15px 0 0'}}/>}>
                         <p style={{fontWeight: '500', color: 'cyan'}}>{zodiac.name}</p>
                         <p style={{fontWeight: '200',marginTop: '-5px'}}>Current price: <span style={{fontWeight: '500'}}>{zodiac.price}</span></p>
                         </Card>
@@ -134,7 +137,7 @@ const Homepage = () => {
                     <Row gutter={164}>
                         {dawgzData?.map((dawgz) => (
                         <Col span={4} key={dawgz.name}>
-                          <Card className="my-nft-collection" hoverable style={{width: 140, height: 145,}} cover={<img alt={dawgz.name} src={dawgz.image} style={{borderRadius: '15px 15px 0 0'}}/>}>
+                          <Card className="my-nft-collection" hoverable style={{width: 140, height: 145,}} cover={<img alt={dawgz.name} src={dawgz.image} style={{border: '1px solid transparent',borderRadius: '15px 15px 0 0'}}/>}>
                           <p style={{fontWeight: '500', color: 'cyan'}}>{dawgz.name}</p>
                           <p style={{fontWeight: '200',marginTop: '-5px'}}>Current price: <span style={{fontWeight: '500'}}>{dawgz.price}</span></p>
                           </Card>
@@ -216,8 +219,8 @@ const Homepage = () => {
                   <p style={{lineHeight: '1', fontSize: '13px', fontWeight: '400'}}>+2.55%</p>
                 </div>
                 <div className="sidebar-port-buttons">
-                  <Button className="sidebar-button" style={{fontSize: '10px', borderRadius: '6px', width: '90px'}} icon={<VerticalAlignBottomOutlined style={{fontSize: '14px', marginRight: '-6px'}}/>}>Deposit</Button>
-                  <Button className="sidebar-button" style={{fontSize: '10px', borderRadius: '6px', width: '90px'}} icon={<VerticalAlignTopOutlined style={{fontSize: '14px', marginRight: '-6px'}} />}>Withdraw</Button>
+                  <Button className="sidebar-button" style={{fontSize: '10px', borderRadius: '6px', width: '90px', border: '0px', color: '#fff'}} icon={<VerticalAlignBottomOutlined style={{fontSize: '14px', marginRight: '-6px'}}/>}>Deposit</Button>
+                  <Button className="sidebar-button" style={{fontSize: '10px', borderRadius: '6px', width: '90px', border: '0px', color: '#fff'}} icon={<VerticalAlignTopOutlined style={{fontSize: '14px', marginRight: '-6px'}} />}>Withdraw</Button>
                 </div>
               </Card>
             </Col>
