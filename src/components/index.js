@@ -6,3 +6,5 @@ export { default as Cryptocurrencies } from './Cryptocurrencies';
 export { default as Chart } from './Chart';
 export { default as CryptoDetails } from './CryptoDetails';
 export { default as Nft } from './Nft';
+export { default as Settings } from './Settings';
+export { default as Credits } from './Credits';

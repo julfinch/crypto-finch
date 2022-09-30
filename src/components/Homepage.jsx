@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Col, Row, Badge, Drawer, Avatar, List, Input, Space, Image,Tabs, Layout, Typography, Card, Button } from 'antd';
+import { Col, Row, Badge, Drawer,Checkbox, Avatar,Form, List, Input, Space, Image,Tabs, Layout, Typography, Card, Button } from 'antd';
 import { NotificationOutlined, BarChartOutlined, VerticalAlignTopOutlined, VerticalAlignBottomOutlined, SettingOutlined, MessageOutlined, CreditCardOutlined } from '@ant-design/icons';
 import avatar_bg from "../images/avatar_bg.svg";
 import avatar_pic from "../images/avatar_pic.svg";
@@ -7,7 +7,12 @@ import icon4 from "../images/Ripple.svg";
 import icon1 from "../images/Polygon.svg";
 import icon2 from "../images/Tron.svg";
 import icon3 from "../images/Cardano.svg";
+import card1 from "../images/card1.svg";
+import card2 from "../images/card2.svg";
+import card3 from "../images/card3.svg";
 import HomeLinechart from "./HomeLinechart";
+import Settings from "./Settings";
+import Credits from "./Credits";
 import { Link } from 'react-router-dom';
 import HomeDonut from "./HomeDonut";
 import { zodiacData, dawgzData, monkiesData, assetsData, topData } from "../images/dummy";
@@ -44,12 +49,20 @@ const data = [
 ];
 
 const Homepage = () => {
+  const [openSettings, setOpenSettings] = useState(false);
+  const [openCredits, setOpenCredits] = useState(false);
   const [open, setOpen] = useState(false);
-  const showDrawer = () => {
-    setOpen(true);
+  const showSettings = () => {
+    setOpenSettings(true);
   };
-  const onClose = () => {
-    setOpen(false);
+  const showCredits = () => {
+    setOpenCredits(true);
+  };
+  const onCloseSettings = () => {
+    setOpenSettings(false);
+  };
+  const onCloseCredits = () => {
+    setOpenCredits(false);
   };
 
 
@@ -184,16 +197,16 @@ const Homepage = () => {
         {/* SIDEBAR */}
         <Sider className="sidebar-container">
           <Row className="sidebar-user" justify="space-between">
-            <Col span={2} onClick={showDrawer}>              
+            <Col span={2} >              
               <Badge dot><NotificationOutlined className="sidebar-user-badge"/></Badge>
             </Col>
-            <Col span={2} onClick={showDrawer}>              
-              <Badge ><CreditCardOutlined className="sidebar-user-badge"/></Badge>
-            </Col>
-            <Col span={2} onClick={showDrawer}>              
+            <Col span={2} >              
               <Badge dot><MessageOutlined className="sidebar-user-badge"/></Badge>
             </Col>
-            <Col span={2} onClick={showDrawer}>              
+            <Col span={2} onClick={showCredits}>              
+              <Badge ><CreditCardOutlined className="sidebar-user-badge"/></Badge>
+            </Col>
+            <Col span={2} onClick={showSettings}>              
               <Badge ><SettingOutlined className="sidebar-user-badge"/></Badge>
             </Col>
           </Row>
@@ -205,7 +218,6 @@ const Homepage = () => {
               <Meta className="sidebar-profile-name" title="Lara D. Turner" description="@degen_ape01" style={{ color: '#fff', position: 'absolute', bottom: '-1px'}}/>
             </Col>
           </Row>               
-          
           
           <Row className="sidebar-transactions">
             <Col span={24}>
@@ -243,10 +255,12 @@ const Homepage = () => {
             ))}
           </Row>
         </Sider>
-        <Drawer title="..." placement="right" onClose={onClose} open={open}>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+
+        <Drawer title="Settings" placement="right" onClose={onCloseSettings} open={openSettings} className="drawer-settings">
+          <Settings/>
+        </Drawer>
+        <Drawer title="Linked Cards" placement="right" onClose={onCloseCredits} open={openCredits} >
+          <Credits/>
         </Drawer>
       </Layout>
   )

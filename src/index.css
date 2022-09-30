@@ -4,6 +4,7 @@
   --text-primary:#fff;
   --bgPrimary:#fff;
  --bgSecondary: #F9F9F9;
+ --bgTertiary: #383d5d;
  --pink: #0071bd;
  --light-blue: #e6f7ff;
  --border: #d9d9d9;
@@ -32,6 +33,9 @@ a:hover{
 .navbar{
   flex: 0.2;
   background-color: rgba(16, 7,71, 1);
+}
+.white{
+  color: var(--text-primary) !important;
 }
 
 .main{
@@ -233,7 +237,62 @@ a:hover{
   background: rgb(228,76,242) !important;
   background: linear-gradient(90deg, rgba(228,76,242,1) 20%, rgba(76,221,242,1) 100%) !important; 
 }
-
+/*MAIN - DRAWER*/
+.ant-drawer-content {
+  background: #383d5d !important;
+}
+.ant-drawer-body {
+  padding: 10px 24px !important;
+}
+.ant-drawer-header{
+  border-bottom: 1px solid rgba(255,255,255, 0.2) !important;
+}
+.ant-drawer-title {
+  color: rgba(255,255,255, 0.85) !important;
+}
+.ant-drawer-close {
+  color: rgba(255,255,255, 1) !important;
+}
+/*MAIN - DRAWER - SETTINGS*/
+.ant-form-item-label > label {
+  height: 0px !important;
+  color: rgba(255,255,255, 0.7) !important;
+  font-size: 11px !important;
+}
+.ant-input {
+  padding: 2px 11px !important;
+  color: var(--text-primary) !important;
+  font-size: 12px !important;
+  background-color: var(--bgTertiary) !important;
+  border-radius: 5px !important;
+}
+.ant-form-item {
+  margin-bottom: 4px !important;
+}
+.ant-form-vertical .ant-form-item-label, .ant-col-24.ant-form-item-label, .ant-col-xl-24.ant-form-item-label {
+  padding: 0 0 0px !important;
+}
+.ant-checkbox-wrapper {
+  color: rgba(255,255,255, 0.85) !important;
+  font-size: 12px !important;
+}
+.ant-checkbox-wrapper + .ant-checkbox-wrapper {
+  margin-left: 0px !important;
+}
+/*MAIN - DRAWER - CREDIT CARDS*/
+.drawer-cc{
+  width: 84% !important;
+  margin-bottom: -40px !important;
+  transition: margin 0.5s, height 0.5s, transform 0.5s;
+  background: transparent;
+  border-radius: 15px;
+  box-shadow: 0.5px 15.5px 8px 1px rgba(0,0,0,0.5) !important;
+}
+.drawer-cc:hover{
+  width: 84% !important;
+  margin-bottom: 36px !important;
+  cursor: pointer;
+}
 /* NFT COLLECTION*/
 .nft-collection-wrapper{
   position: relative !important;
