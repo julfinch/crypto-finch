@@ -8,3 +8,5 @@ export { default as CryptoDetails } from './CryptoDetails';
 export { default as Nft } from './Nft';
 export { default as Settings } from './Settings';
 export { default as Credits } from './Credits';
+export { default as Chat } from './Chat';
+export { default as Notifications } from './Notifications';

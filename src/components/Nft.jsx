@@ -12,12 +12,9 @@ const { Search } = Input;
 const Nft = () => {
     const { data: openseaList, isFetching } = useGetNftsQuery();
     const [opensea, setOpensea] = useState();
-    console.log(openseaList);
 
     const [nftSearch, setNftSearch] = useState('');
     const { data: nftSearchResults } = useGetWebitQuery({ nftSearch });
-    console.log(nftSearchResults);
-    console.log(nftSearch);
     
     useEffect(() => {
         setOpensea(openseaList?.assets);;

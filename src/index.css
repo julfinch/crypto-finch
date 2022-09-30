@@ -239,7 +239,7 @@ a:hover{
 }
 /*MAIN - DRAWER*/
 .ant-drawer-content {
-  background: #383d5d !important;
+  background: var(--bgTertiary) !important;
 }
 .ant-drawer-body {
   padding: 10px 24px !important;
@@ -260,7 +260,7 @@ a:hover{
   font-size: 11px !important;
 }
 .ant-input {
-  padding: 2px 11px !important;
+  padding: 0px 11px !important;
   color: var(--text-primary) !important;
   font-size: 12px !important;
   background-color: var(--bgTertiary) !important;
@@ -292,6 +292,20 @@ a:hover{
   width: 84% !important;
   margin-bottom: 36px !important;
   cursor: pointer;
+}
+/*MAIN - DRAWER - MESSAGES*/
+.chat-list-item .ant-list-item-meta-title {
+  color: var(--text-primary);
+  font-size: 17px;
+  line-height: 1;
+  margin-bottom: 0px;
+}
+.chat-content,
+.chat-list-item .ant-list-item-meta-description {
+  color: rgba(255,255,255, 0.5);
+  font-size: 12px;
+  line-height: 1.5715;
+  font-weight: 300 important;
 }
 /* NFT COLLECTION*/
 .nft-collection-wrapper{
@@ -420,7 +434,7 @@ a:hover{
   margin-bottom: -20px;
 }
 .assets-card{
-  background: #383d5d !important;
+  background: var(--bgTertiary) !important;
   box-shadow: 0.5px 15.5px 14px 1px #131427 !important;
   border-radius: 10px !important;
   color: #fff !important;
@@ -473,7 +487,7 @@ a:hover{
 .home-donut-card,
 .home-transactions-card,
 .sidebar-port{
-  background: #383d5d !important;
+  background: var(--bgTertiary) !important;
   box-shadow: 0.5px 15.5px 14px 1px #131427 !important;
   border-radius: 15px !important;
   color: #fff !important;
@@ -511,7 +525,7 @@ a:hover{
 
 .news-card {
   min-height: 270px !important;
-  background: #383d5d !important;
+  background: var(--bgTertiary) !important;
   box-shadow: 0.5px 15.5px 14px 1px #131427 !important;
   border-radius: 15px !important;
   color: #fff !important;

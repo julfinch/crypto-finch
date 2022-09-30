@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Col, Row, Badge, Drawer,Checkbox, Avatar,Form, List, Input, Space, Image,Tabs, Layout, Typography, Card, Button } from 'antd';
+import { Col, Row, Badge, Drawer, Avatar, List, Input, Image,Tabs, Layout, Typography, Card, Button } from 'antd';
 import { NotificationOutlined, BarChartOutlined, VerticalAlignTopOutlined, VerticalAlignBottomOutlined, SettingOutlined, MessageOutlined, CreditCardOutlined } from '@ant-design/icons';
 import avatar_bg from "../images/avatar_bg.svg";
 import avatar_pic from "../images/avatar_pic.svg";
@@ -7,12 +7,11 @@ import icon4 from "../images/Ripple.svg";
 import icon1 from "../images/Polygon.svg";
 import icon2 from "../images/Tron.svg";
 import icon3 from "../images/Cardano.svg";
-import card1 from "../images/card1.svg";
-import card2 from "../images/card2.svg";
-import card3 from "../images/card3.svg";
 import HomeLinechart from "./HomeLinechart";
 import Settings from "./Settings";
 import Credits from "./Credits";
+import Notifications from "./Notifications";
+import Chat from "./Chat";
 import { Link } from 'react-router-dom';
 import HomeDonut from "./HomeDonut";
 import { zodiacData, dawgzData, monkiesData, assetsData, topData } from "../images/dummy";
@@ -51,6 +50,8 @@ const data = [
 const Homepage = () => {
   const [openSettings, setOpenSettings] = useState(false);
   const [openCredits, setOpenCredits] = useState(false);
+  const [openChat, setOpenChat] = useState(false);
+  const [openNotifications, setOpenNotifications] = useState(false);
   const [open, setOpen] = useState(false);
   const showSettings = () => {
     setOpenSettings(true);
@@ -58,11 +59,23 @@ const Homepage = () => {
   const showCredits = () => {
     setOpenCredits(true);
   };
+  const showChat = () => {
+    setOpenChat(true);
+  };
+  const showNotifications = () => {
+    setOpenNotifications(true);
+  };
   const onCloseSettings = () => {
     setOpenSettings(false);
   };
   const onCloseCredits = () => {
     setOpenCredits(false);
+  };
+  const onCloseChat = () => {
+    setOpenChat(false);
+  };
+  const onCloseNotifications = () => {
+    setOpenNotifications(false);
   };
 
 
@@ -197,10 +210,10 @@ const Homepage = () => {
         {/* SIDEBAR */}
         <Sider className="sidebar-container">
           <Row className="sidebar-user" justify="space-between">
-            <Col span={2} >              
+            <Col span={2} onClick={showNotifications}  >              
               <Badge dot><NotificationOutlined className="sidebar-user-badge"/></Badge>
             </Col>
-            <Col span={2} >              
+            <Col span={2} onClick={showChat} >              
               <Badge dot><MessageOutlined className="sidebar-user-badge"/></Badge>
             </Col>
             <Col span={2} onClick={showCredits}>              
@@ -261,6 +274,12 @@ const Homepage = () => {
         </Drawer>
         <Drawer title="Linked Cards" placement="right" onClose={onCloseCredits} open={openCredits} >
           <Credits/>
+        </Drawer>
+        <Drawer title="Messages" placement="right" onClose={onCloseChat} open={openChat} >
+          <Chat/>
+        </Drawer>
+        <Drawer title="Notifications" placement="right" onClose={onCloseNotifications} open={openNotifications} >
+          <Notifications/>
         </Drawer>
       </Layout>
   )
