@@ -5,17 +5,9 @@ import { PlayCircleOutlined, FormOutlined } from '@ant-design/icons';
 import { SiDiscord, SiTwitter } from 'react-icons/si';
 import { BsGlobe, BsFillPersonCheckFill, BsCardImage, BsPiggyBank } from 'react-icons/bs';
 import na from "../images/NA.jpg";
+import {  openseaSlugs } from "../images/dummy";
 import Loader from './Loader';
 import { useGetNftsQuery,useGetSlugAssetsQuery, useGetSlugsQuery, useGetCollectionsQuery } from '../services/nftApi';
-
-const openseaSlugs = [
-  {
-    slug: "cryptopunks"
-  },
-  {
-    slug: "kitaroworldofficial"
-  },
-];
 
 const { Header, Content } = Layout;
 const { Search } = Input;
@@ -31,15 +23,18 @@ const Nft = () => {
     const { data: nftCollections } = useGetCollectionsQuery({collectionSlug});
     
     const { data: slugAssets } = useGetSlugAssetsQuery({collectionSlug});
+
+    useEffect(() => {
+      setDataSlugAssets(slugAssets?.assets);;
+    }, [slugAssets]);
+
     const [dataSlugAssets, setDataSlugAssets] = useState();
     
     useEffect(() => {
         setOpensea(openseaList?.assets);;
       }, [openseaList]);
     
-      useEffect(() => {
-        setDataSlugAssets(slugAssets?.assets);;
-      }, [slugAssets]);
+      
 
     if (isFetching) return <Loader />;
   return (
@@ -101,7 +96,7 @@ const Nft = () => {
                 
                   <Tabs.TabPane tab="Discover Collections" key="2">
                     <Row gutter={[24, 24]}>
-                      <Col span={24} offset={14.5}>
+                      <Col span={24} offset={14} >
                         <Select
                           showSearch
                           style={{width: '400px'}}
@@ -112,9 +107,7 @@ const Nft = () => {
                           filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
                         >
                           <Option value="doodles-official">Doodles Official</Option>
-                          <Option value="mafiadogs-official">Mafia Dogs Official</Option>
-                          <Option value="poobs">Poobs</Option>
-                          {openseaSlugs?.map((collection) => <Option value={collection.slug}>{collection.slug}</Option>)}
+                          {openseaSlugs?.map((collection) => <Option value={collection.slug}>{collection.title}</Option>)}
                         </Select>
                       </Col>
 
@@ -178,9 +171,9 @@ const Nft = () => {
                           <Divider/>
 
                           <Row gutter={[24, 24]} style={{paddingTop: '20px'}}>
-                            {dataSlugAssets?.map((slugAssets, i) => (
+                            {dataSlugAssets && dataSlugAssets?.map((slugAssets, i) => (
                             <Col span={4} key={i}>
-                              <Card className="my-nft-collection" hoverable style={{minWidth: 155, height: 220 }} cover={<img alt={slugAssets.image_url} src={slugAssets.image_url || na} style={{border: '1px solid transparent',borderRadius: '15px 15px 0 0', maxWidth: 170, maxHeight: 167,}}/>}>
+                              <Card className="my-nft-collection" hoverable style={{minWidth: 155, height: 220, position: 'relative'  }} cover={<img alt={slugAssets.image_url} src={slugAssets.image_url || na} style={{border: '1px solid transparent',borderRadius: '15px 15px 0 0', maxWidth: 170, maxHeight: 167,}}/>}>
                               <p style={{fontSize: '12px', fontWeight: '500', color: 'cyan'}}>{slugAssets.name || 'N/A'}</p>
                               <p style={{fontWeight: '200',marginTop: '-5px'}}>ID #: <span style={{fontWeight: '500'}}>{slugAssets.id}</span></p>
                               <div className="nft-collection-data" style={{ width: '155px',height: '500px', position: 'absolute', top: '0px', left: '0px', bottom: '0px'}}></div>
