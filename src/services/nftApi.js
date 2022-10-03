@@ -13,9 +13,21 @@ export const nftApi = createApi({
     getNfts: builder.query({
       query: () => createRequest(`/assets`),
     }),
+    getSlugAssets: builder.query({
+      query: ({collectionSlug}) => createRequest(`/assets?collection_slug=${collectionSlug}`),
+    }),
+    getSlugs: builder.query({
+      query: () => createRequest(`/collections`),
+    }),
+    getCollections: builder.query({
+      query: ({collectionSlug}) => createRequest(`/collection/${collectionSlug}`),
+    }),
   }),
 });
 
 export const {
   useGetNftsQuery,
+  useGetSlugAssetsQuery,
+  useGetSlugsQuery,
+  useGetCollectionsQuery,
 } = nftApi;

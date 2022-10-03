@@ -308,6 +308,21 @@ a:hover{
   font-weight: 300 important;
 }
 /* NFT COLLECTION*/
+.nft-heading-card{
+  background: url('./images/home_bg.jpg') !important;
+  background-repeat: no-repeat !important;
+  margin-bottom: 14px !important;
+  background-size: cover !important;
+  background-position: bottom !important; 
+  box-shadow: 0.5px 15.5px 14px 1px #131427 !important;
+  border-radius: 15px !important;
+  color: #000 !important;
+  font-size: 13px !important;
+  font-weight: 200 !important;
+  line-height: 1.3 !important;
+  width: 100%;
+  height: 160px;
+}
 .nft-collection-wrapper{
   position: relative !important;
 }
@@ -315,6 +330,62 @@ a:hover{
   padding: -100px !important;
   font-size: 7px !important;
   border: 1px solid red !important;
+  transition: margin 0.5s, height 0.5s, transform 1s;
+  overflow: hidden;
+}
+.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  background-color: #2a2b47 !important;
+  border: 1px solid rgba(255,255,255, 0.3) !important;
+  border-radius: 2px;
+}
+.ant-select-arrow {
+  color: rgba(255, 255, 255, 0.25) !important;
+}
+.ant-select {
+  color: rgba(255,255,255,0.3) !important;
+}
+.ant-select-item {
+  color: gray !important;
+}
+.ant-select-dropdown {
+  color: #000;
+  background-color: #2a2b47 !important;
+}
+.my-nft-collection:hover{
+  margin-top: -10px !important;
+}
+.nft-collection-data:hover + .nft-buy-button{
+  display: grid;
+}
+.nft-buy-button{
+  font-size: 13px;
+  font-weight: 500;
+  background: rgb(228,76,242);
+  background: linear-gradient(90deg, rgba(228,76,242,1) 20%, rgba(76,221,242,1) 100%); 
+  height: 30px;
+  width: 155px;
+  margin: -6px -8px;
+  place-content: center;
+  display: none;
+}
+.nft-collection-stats p{
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 400;
+  line-height: 0;
+  color: var(--text-primary);
+}
+.nft-collection-stats p:nth-child(2){
+  color: rgba(255,255,255,0.3);
+}
+.ant-divider {
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  font-feature-settings: 'tnum';
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
 }
 .nft-title-heading{
   font-size: 13px !important;
@@ -322,6 +393,25 @@ a:hover{
   top: 12px !important;
   position: absolute !important;
 }
+.nft-discover-heading-card{
+  margin-bottom: 14px !important;
+  height: 300px !important;
+  box-shadow: 0.5px 15.5px 14px 1px #131427 !important;
+  border-radius: 15px !important;
+  color: #000 !important;
+  font-size: 13px !important;
+  font-weight: 200 !important;
+  line-height: 1.3 !important;
+  width: 100%;
+  overflow: hidden; 
+}
+.nft-discover-profile-image{
+  position: absolute !important;
+  bottom: -100px !important;
+  left: -10px !important;
+}
+
+/* SIDEBAR*/
 .sidebar-container{
   background: #2b2f48 !important;
   min-width: 250px !important;
@@ -888,6 +978,7 @@ width: 70%;
 }
 .crypto-card .crypto-image{
   width:35px;
+  height:35px;
 }
 .select-timeperiod{
   width: 200px !important;

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import millify from 'millify';
 import { Link } from 'react-router-dom';
 import { Card, Row, Col, Input } from 'antd';
+import { BankOutlined, SlidersOutlined } from '@ant-design/icons';
+import { Sparklines, SparklinesLine } from 'react-sparklines';
 
 import { useGetCryptosQuery } from '../services/cryptoApi';
 import Loader from './Loader';
@@ -51,9 +53,18 @@ const Cryptocurrencies = ({ simplified }) => {
                 hoverable
                 className="cryptocurrencies-card"
               >
-                <p>Price: {millify(currency.price)}</p>
-                <p>Market Cap: {millify(currency.marketCap)}</p>
-                <p>Daily Change: {currency.change}%</p>
+                <Sparklines data={currency.sparkline}>
+                  <SparklinesLine color="cyan" />
+                </Sparklines>
+                <div style={{display: 'flex',flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: '5px',}}>
+                  <div style={{display: 'flex', flexDirection: 'column',justifyContent: 'center', alignItems: 'center', height: '60px'}}>
+                    <p style={{fontWeight: '400', fontSize: '38px',marginTop: '25px'}}>${millify(currency.price)}</p>
+                  </div>
+                  <div style={{display: 'flex', flexDirection: 'column', height: '60px'}}>
+                    <p style={{fontWeight: '400',lineHeight: '0.3', margin: '1px'}}><BankOutlined style={{border: '1px solid cyan', padding: '4px', borderRadius: ' 5px', color: 'cyan'}}/> {millify(currency.marketCap)}</p>
+                    <p style={{fontWeight: '400',lineHeight: '0.3', margin: '1px'}}><SlidersOutlined  style={{border: '1px solid cyan', padding: '4px', borderRadius: ' 5px', color: 'cyan'}}/> {currency.change}%</p>
+                  </div>
+                </div>
               </Card>
             </Link>
           </Col>
