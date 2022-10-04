@@ -1,10 +1,13 @@
 import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import { Layout, Typography, Space } from "antd";
-import { Chart, GlobalPage, Nft, Homepage, News, Cryptocurrencies, CryptoDetails, Navbar } from './components';
+import { Chart, GlobalPage, Nft, Homepage, News, Cryptocurrencies, CryptoDetails, Navbar, SignUp } from './components';
+import { AuthContextProvider } from './context/AuthContext';
+
 
 export default function App() {
   return (
+    <AuthContextProvider>
     <div className="app-container">
     <div className="app">
       <div className="navbar">
@@ -35,6 +38,9 @@ export default function App() {
             <Route exact path="/news">
               <News />
             </Route>
+            <Route exact path="/signup">
+              <SignUp />
+            </Route>
           </Switch>
         </div>
       </Layout>
@@ -56,5 +62,6 @@ export default function App() {
       </div>
     </div>
     </div>
+    </AuthContextProvider>
   );
 }

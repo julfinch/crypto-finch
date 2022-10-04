@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import millify from 'millify';
 import { Link } from 'react-router-dom';
 import { Card, Row, Col, Input } from 'antd';
-import { BankOutlined, SlidersOutlined } from '@ant-design/icons';
+import { BankOutlined, SlidersOutlined, CaretDownOutlined, CaretUpOutlined } from '@ant-design/icons';
 import { Sparklines, SparklinesLine } from 'react-sparklines';
 
 import { useGetCryptosQuery } from '../services/cryptoApi';
@@ -62,7 +62,7 @@ const Cryptocurrencies = ({ simplified }) => {
                   </div>
                   <div style={{display: 'flex', flexDirection: 'column', height: '60px'}}>
                     <p style={{fontWeight: '400',lineHeight: '0.3', margin: '1px'}}><BankOutlined style={{border: '1px solid cyan', padding: '4px', borderRadius: ' 5px', color: 'cyan'}}/> {millify(currency.marketCap)}</p>
-                    <p style={{fontWeight: '400',lineHeight: '0.3', margin: '1px'}}><SlidersOutlined  style={{border: '1px solid cyan', padding: '4px', borderRadius: ' 5px', color: 'cyan'}}/> {currency.change}%</p>
+                    <p style={{fontWeight: '400',lineHeight: '0.3', margin: '1px'}}> {currency.change > 0 ? <CaretUpOutlined  style={{border: '1px solid cyan', padding: '4px', borderRadius: ' 5px', color: 'limegreen'}}/> : <CaretDownOutlined style={{border: '1px solid cyan', padding: '4px', borderRadius: ' 5px', color: 'red'}}/>} {currency.change > 0 ? (<span style={{color: 'limegreen'}}>{currency.change}%</span>) : (<span style={{color: 'red'}}>{currency.change}%</span>)}</p>
                   </div>
                 </div>
               </Card>

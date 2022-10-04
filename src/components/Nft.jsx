@@ -8,6 +8,7 @@ import na from "../images/NA.jpg";
 import {  openseaSlugs } from "../images/dummy";
 import Loader from './Loader';
 import { useGetNftsQuery,useGetSlugAssetsQuery, useGetSlugsQuery, useGetCollectionsQuery } from '../services/nftApi';
+import { useGetWebitQuery } from '../services/webitApi';
 
 const { Header, Content } = Layout;
 const { Search } = Input;
@@ -24,6 +25,9 @@ const Nft = () => {
     
     const { data: slugAssets } = useGetSlugAssetsQuery({collectionSlug});
 
+    const [nftSearch, setNftSearch] = useState('');
+    const { data: nftSearchResults } = useGetWebitQuery({ nftSearch });
+    console.log(nftSearchResults);
     useEffect(() => {
       setDataSlugAssets(slugAssets?.assets);;
     }, [slugAssets]);
@@ -59,6 +63,7 @@ const Nft = () => {
             <Row gutter={[15, 15]}>
               
               {/* MAIN - NFT COLLECTION */}
+              { !nftSearchResults.data ?
               <Col span={24} className="nft-collection-wrapper">
                 <Typography.Title level={4} className="nft-title-heading">NFT Gallery</Typography.Title>
                 <Tabs defaultActiveKey="1" className="nft-tabs">
@@ -190,7 +195,24 @@ const Nft = () => {
                   </Tabs.TabPane>
                 </Tabs>
               </Col>
-              
+              :
+              <Col span={24} className="nft-collection-wrapper">
+                    <Row gutter={[24, 24]}>
+                      {nftSearchResults.data.results.map((webit) => (
+                      <a href={webit.website} target="_blank" rel="noreferrer">
+                        <Col span={4} key={webit.name}>
+                            <Card className="my-nft-collection" hoverable style={{width: 187, height: 287 }} cover={<img alt={webit.name} src={webit.image || na} style={{border: '1px solid transparent',borderRadius: '15px 15px 0 0', maxWidth: 193, maxHeight: 171}}/>}>
+                            <p style={{fontSize: '12px', fontWeight: '500', color: 'cyan'}}>{webit.name || 'N/A'}</p>
+                            <p style={{fontWeight: '560',marginTop: '-5px', wordWrap: 'break-word'}}>ADDRESS: <span style={{fontWeight: '200'}}>{webit.address}</span></p>
+                            <p style={{fontWeight: '560',marginTop: '-5px'}}>CHAIN: <span style={{fontWeight: '200'}}>{webit.chain}</span></p>
+                            <p style={{fontWeight: '560',marginTop: '-5px', wordWrap: 'break-word'}}><span style={{fontWeight: '200'}}>{webit.website}</span></p>
+                            </Card>
+                        </Col>
+                      </a>
+                      ))}
+                    </Row>
+              </Col>
+              }
             </Row>
           </Content>
         </Layout>
