@@ -32,7 +32,7 @@ const Navbar = () => {
     <div className="nav-container circles">
       <div className="logo-container">
         <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
-          <Avatar src={icon} size="medium" />
+          <Avatar src={icon} size="medium" style={{width: 42}}/>
           <Typography.Title level={2} className="logo"><Link to="/">NeuBlock</Link></Typography.Title>
         </div>
         <Button className="menu-control-container" onClick={() => setActiveMenu(!activeMenu)}><MenuOutlined /></Button>
