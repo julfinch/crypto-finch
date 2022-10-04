@@ -15,7 +15,7 @@ import w2 from "./w2.jpg";
 import w3 from "./w3.jpg";
 import w4 from "./w4.jpg";
 import w5 from "./w5.jpg";
-import t1 from "./t1.jpg";
+import t1 from "./t6.jpg";
 import t2 from "./t2.jpg";
 import t3 from "./t3.jpg";
 import t4 from "./t4.jpg";
