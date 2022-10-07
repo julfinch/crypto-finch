@@ -150,28 +150,8 @@ export const openseaSlugs = [
     slug: "renga"
   },
   {
-    title: "Linagee Name Registrar (LNR)",
-    slug: "linageenamewrapper"
-  },
-  {
-    title: "Creature Chronicles Atrivians",
-    slug: "creature-chronicles-atrivians"
-  },
-  {
-    title: "Critters Cult",
-    slug: "critters-cult-v3"
-  },
-  {
-    title: "RENGA Black Box",
-    slug: "renga-black-box"
-  },
-  {
     title: "Otherdeed for Otherside",
     slug: "otherdeed"
-  },
-  {
-    title: "y00ts mint t00b",
-    slug: "y00ts-mint-t00b"
   },
   {
     title: "QQL Mint Pass",
@@ -180,10 +160,6 @@ export const openseaSlugs = [
   {
     title: "Bored Ape Yacht Club",
     slug: "boredapeyachtclub"
-  },
-  {
-    title: "END: Ethereum Name Service",
-    slug: "ens"
   },
   {
     title: "Mutant Ape Yacht Club",

@@ -27,13 +27,14 @@ const Nft = () => {
 
     const [nftSearch, setNftSearch] = useState('');
     const { data: nftSearchResults } = useGetWebitQuery({ nftSearch });
+    const nftWebitSearch = nftSearchResults?.data;
     console.log(nftSearchResults);
     useEffect(() => {
       setDataSlugAssets(slugAssets?.assets);;
     }, [slugAssets]);
 
     const [dataSlugAssets, setDataSlugAssets] = useState();
-    
+    console.log(dataSlugAssets);
     useEffect(() => {
         setOpensea(openseaList?.assets);;
       }, [openseaList]);
@@ -63,7 +64,7 @@ const Nft = () => {
             <Row gutter={[15, 15]}>
               
               {/* MAIN - NFT COLLECTION */}
-              { !nftSearchResults.data ?
+              { !nftWebitSearch ?
               <Col span={24} className="nft-collection-wrapper">
                 <Typography.Title level={4} className="nft-title-heading">NFT Gallery</Typography.Title>
                 <Tabs defaultActiveKey="1" className="nft-tabs">
