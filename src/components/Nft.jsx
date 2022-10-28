@@ -9,11 +9,13 @@ import {  openseaSlugs } from "../images/dummy";
 import Loader from './Loader';
 import { useGetNftsQuery,useGetSlugAssetsQuery, useGetSlugsQuery, useGetCollectionsQuery } from '../services/nftApi';
 import { useGetWebitQuery } from '../services/webitApi';
+import useWindowSize from "../hooks/useWindowSize";
 
 const { Header, Content } = Layout;
 const { Search } = Input;
 
 const Nft = () => {
+  const { width } = useWindowSize();
     const { data: openseaList, isFetching } = useGetNftsQuery();
     const [opensea, setOpensea] = useState();
 
@@ -28,13 +30,13 @@ const Nft = () => {
     const [nftSearch, setNftSearch] = useState('');
     const { data: nftSearchResults } = useGetWebitQuery({ nftSearch });
     const nftWebitSearch = nftSearchResults?.data;
-    console.log(nftSearchResults);
+    
     useEffect(() => {
       setDataSlugAssets(slugAssets?.assets);;
     }, [slugAssets]);
 
     const [dataSlugAssets, setDataSlugAssets] = useState();
-    console.log(dataSlugAssets);
+    
     useEffect(() => {
         setOpensea(openseaList?.assets);;
       }, [openseaList]);
@@ -84,13 +86,29 @@ const Nft = () => {
 
                     <Row gutter={[24, 24]}>
                       {opensea?.map((opensea) => (
-                      <Col span={4} key={opensea.id}>
-                        <Card className="my-nft-collection" hoverable style={{minWidth: 155, height: 220, position: 'relative' }} cover={<img alt={opensea.image_url} src={opensea.image_url || na} style={{border: '1px solid transparent',borderRadius: '15px 15px 0 0', maxWidth: 170, maxHeight: 167,}}/>}>
+                      <Col xl={4} lg={6} key={opensea.id}>
+                        <Card 
+                        className="my-nft-collection" 
+                        hoverable 
+                        style={{
+                          width: width > 1100 ? 155 : 180, 
+                          height:  width > 1100 ? 220 : 235, 
+                          position: 'relative' }} 
+                        cover={<img 
+                          alt={opensea.image_url} src={opensea.image_url || na} 
+                          style={{
+                            border: '1px solid transparent',
+                            borderRadius: '15px 15px 0 0', 
+                            maxWidth: width > 1100 ? 170 : 182, 
+                            maxHeight: 167,
+                          }}
+                        />
+                        }>
                         
-                        <p style={{fontSize: '12px', fontWeight: '500', color: 'cyan'}}>{opensea.name || 'N/A'}</p>
+                        <p style={{fontSize: '12px', fontWeight: '500', color: 'cyan'}}>{opensea.name.length > 15 ? `${opensea.name.substring(0, 15)}...` : opensea.name || 'N/A'}</p>
                         <p style={{fontWeight: '200',marginTop: '-5px'}}>ID #: <span style={{fontWeight: '500'}}>{opensea.id}</span></p>
                         
-                        <div className="nft-collection-data" style={{ width: '155px',height: '500px', position: 'absolute', top: '0px', left: '0px', bottom: '0px'}}></div>
+                        <div className="nft-collection-data" style={{ width: '155px', height: '500px', position: 'absolute', top: '0px', left: '0px', bottom: '0px', right: '0px'}}></div>
                         <div className="nft-buy-button">
                           <span>BUY</span>
                         </div>
@@ -105,7 +123,7 @@ const Nft = () => {
                       <Col span={24} offset={14} >
                         <Select
                           showSearch
-                          style={{width: '400px'}}
+                          style={{width: width > 1100 ? '420px' : '320px'}}
                           className="select-news"
                           placeholder="Select a collection"
                           optionFilterProp="children"
@@ -145,7 +163,7 @@ const Nft = () => {
                             <Col span={4}>
                               <div> 
                                 <p>{millify(nftCollections?.collection.stats.total_volume)} <img style={{width: 15}} src={nftCollections?.collection.payment_tokens[0].image_url}  /></p>                                 
-                                <p>total volume</p>
+                                <p>volume</p>
                               </div>
                             </Col>
                             <Col span={4}>
@@ -157,7 +175,7 @@ const Nft = () => {
                             <Col span={4}>
                               <div> 
                               <p>{millify(nftCollections?.collection.stats.average_price)} <img style={{width: 15}} src={nftCollections?.collection.payment_tokens[0].image_url}  /></p>                                 
-                                <p>average price</p>
+                                <p>avg price</p>
                               </div>
                             </Col>
                             <Col span={4}>
@@ -169,7 +187,7 @@ const Nft = () => {
                             <Col span={4}>
                               <div> 
                               <p style={{padding: '12px 0'}}>{nftCollections?.collection.stats.num_owners}</p>                                 
-                                <p>unique owners</p>
+                                <p>unq owners</p>
                               </div>
                             </Col>
                           </Row>
@@ -178,8 +196,8 @@ const Nft = () => {
 
                           <Row gutter={[24, 24]} style={{paddingTop: '20px'}}>
                             {dataSlugAssets && dataSlugAssets?.map((slugAssets, i) => (
-                            <Col span={4} key={i}>
-                              <Card className="my-nft-collection" hoverable style={{minWidth: 155, height: 220, position: 'relative'  }} cover={<img alt={slugAssets.image_url} src={slugAssets.image_url || na} style={{border: '1px solid transparent',borderRadius: '15px 15px 0 0', maxWidth: 170, maxHeight: 167,}}/>}>
+                            slugAssets.image_url ? <Col xl={4} lg={6} key={i}>
+                              <Card className="my-nft-collection" hoverable style={{minWidth: 155, height: width > 1100 ? 220 : 230 , position: 'relative'  }} cover={<img alt={slugAssets.image_url} src={slugAssets.image_url || na} style={{border: '1px solid transparent',borderRadius: '15px 15px 0 0', maxWidth: 170, maxHeight: 167,}}/>}>
                               <p style={{fontSize: '12px', fontWeight: '500', color: 'cyan'}}>{slugAssets.name || 'N/A'}</p>
                               <p style={{fontWeight: '200',marginTop: '-5px'}}>ID #: <span style={{fontWeight: '500'}}>{slugAssets.id}</span></p>
                               <div className="nft-collection-data" style={{ width: '155px',height: '500px', position: 'absolute', top: '0px', left: '0px', bottom: '0px'}}></div>
@@ -187,7 +205,7 @@ const Nft = () => {
                                 <span>BUY</span>
                               </div>
                               </Card>
-                            </Col>
+                            </Col> : null
                             ))}
                           </Row>
                         </div>
@@ -198,15 +216,15 @@ const Nft = () => {
               </Col>
               :
               <Col span={24} className="nft-collection-wrapper">
-                    <Row gutter={[24, 24]}>
+                    <Row gutter={ width > 1100 ? [24, 24] : [8, 24]}>
                       {nftSearchResults.data.results.map((webit) => (
                       <a href={webit.website} target="_blank" rel="noreferrer">
-                        <Col span={4} key={webit.name}>
-                            <Card className="my-nft-collection" hoverable style={{width: 187, height: 287 }} cover={<img alt={webit.name} src={webit.image || na} style={{border: '1px solid transparent',borderRadius: '15px 15px 0 0', maxWidth: 193, maxHeight: 171}}/>}>
+                        <Col xl={4} lg={6} key={webit.name}>
+                            <Card className="my-nft-collection" hoverable style={{width: 187, height: 287 }} cover={<img alt={webit.name} src={webit.image || N/A} style={{border: '1px solid transparent',borderRadius: '15px 15px 0 0', maxWidth: 193, maxHeight: 171}}/>}>
                             <p style={{fontSize: '12px', fontWeight: '500', color: 'cyan'}}>{webit.name || 'N/A'}</p>
-                            <p style={{fontWeight: '560',marginTop: '-5px', wordWrap: 'break-word'}}>ADDRESS: <span style={{fontWeight: '200'}}>{webit.address}</span></p>
-                            <p style={{fontWeight: '560',marginTop: '-5px'}}>CHAIN: <span style={{fontWeight: '200'}}>{webit.chain}</span></p>
-                            <p style={{fontWeight: '560',marginTop: '-5px', wordWrap: 'break-word'}}><span style={{fontWeight: '200'}}>{webit.website}</span></p>
+                            <p style={{fontWeight: '560',marginTop: '-5px', wordWrap: 'break-word'}}>ADDRESS: <span style={{fontWeight: '200'}}>{webit.address || 'N/A'}</span></p>
+                            <p style={{fontWeight: '560',marginTop: '-5px'}}>CHAIN: <span style={{fontWeight: '200'}}>{webit.chain || 'N/A'}</span></p>
+                            <p style={{fontWeight: '560',marginTop: '-5px', wordWrap: 'break-word'}}>SITE: <span style={{fontWeight: '200'}}>{webit.website.length > 27 ? `${webit.website.substring(0, 27)}...` : webit.website || 'N/A'}</span></p>
                             </Card>
                         </Col>
                       </a>

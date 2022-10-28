@@ -48,7 +48,7 @@ const News = ({ simplified }) => {
               <div className="provider-container">
                 <div>
                   <Avatar src={news.provider[0]?.image?.thumbnail?.contentUrl || demoImage} alt="" />
-                  <Text className="provider-name">{news.provider[0]?.name}</Text>
+                  <Text className="provider-name">{news.provider[0]?.name.length > 13 ? `${news.provider[0]?.name.substring(0, 13)}...` : news.provider[0]?.name}</Text>
                 </div>
                 <Text>{moment(news.datePublished).startOf('ss').fromNow()}</Text>
               </div>

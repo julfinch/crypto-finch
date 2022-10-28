@@ -4,11 +4,13 @@ import { Link } from 'react-router-dom';
 import { Card, Row, Col, Input } from 'antd';
 import { BankOutlined, SlidersOutlined, CaretDownOutlined, CaretUpOutlined } from '@ant-design/icons';
 import { Sparklines, SparklinesLine } from 'react-sparklines';
+import useWindowSize from "../hooks/useWindowSize";
 
 import { useGetCryptosQuery } from '../services/cryptoApi';
 import Loader from './Loader';
 
 const Cryptocurrencies = ({ simplified }) => {
+  const { width } = useWindowSize();
   const count = simplified ? 12 : 100;
   const { data: cryptosList, isFetching } = useGetCryptosQuery(count);
   const [cryptos, setCryptos] = useState();
@@ -40,7 +42,8 @@ const Cryptocurrencies = ({ simplified }) => {
           <Col
             xs={24}
             sm={12}
-            lg={6}
+            lg={8}
+            xl={6}
             className="crypto-card"
             key={currency.uuid}
           >

@@ -154,10 +154,6 @@ export const openseaSlugs = [
     slug: "otherdeed"
   },
   {
-    title: "QQL Mint Pass",
-    slug: "qql-mint-pass"
-  },
-  {
     title: "Bored Ape Yacht Club",
     slug: "boredapeyachtclub"
   },
@@ -170,10 +166,6 @@ export const openseaSlugs = [
     slug: "clonex"
   },
   {
-    title: "MURAKAMI",
-    slug: "murakami-by-beeble"
-  },
-  {
     title: "Gangster All Star Evolution",
     slug: "gangster-all-star-evolution"
   },
@@ -182,28 +174,8 @@ export const openseaSlugs = [
     slug: "angrycat-official"
   },
   {
-    title: "ABC(abracadabra)",
-    slug: "abracadabra"
-  },
-  {
     title: "Exosama",
     slug: "exosama-expect-chaos"
-  },
-  {
-    title: "Art Blocks Curated",
-    slug: "art-blocks"
-  },
-  {
-    title: "Tired Man",
-    slug: "tired-man-sol"
-  },
-  {
-    title: "DeGods",
-    slug: "degods"
-  },
-  {
-    title: "BAYC Honorary Members",
-    slug: "bayc-honorary-members"
   },
   {
     title: "Bored Ape Kennel Club",
@@ -212,10 +184,6 @@ export const openseaSlugs = [
   {
     title: "Moonbirds",
     slug: "proof-moonbirds"
-  },
-  {
-    title: "The Sandbox",
-    slug: "sandbox"
   },
   {
     title: "Moonbirds Oddities",
@@ -296,10 +264,6 @@ export const openseaSlugs = [
   {
     title: "Poobs",
     slug: "poobs"
-  },
-  {
-    title: "Moonbirds",
-    slug: "proof-moonbirds"
   },
   {
     title: "Impostors Genesis Aliens",

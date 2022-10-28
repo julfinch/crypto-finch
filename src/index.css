@@ -607,7 +607,7 @@ a:hover{
 }
 
 .crypto-card .ant-card-body{
-  padding: 10px 24px 0px !important;
+  padding: 10px 14px 0px !important;
 }
 .news-card{
   padding: 0px 0px 0px !important;
@@ -705,6 +705,54 @@ a:hover{
   }
 }
 
+/*FOR IPAD*/
+@media screen and (max-width:1100px){
+  /*NAVBAR*/
+  .ant-menu.ant-menu-dark .ant-menu-item-selected, .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected {
+    width: 220px;
+  }
+  .nav-ads-card{
+    width: 210px !important;
+  }
+  /* SIDEBAR*/
+  .sidebar-container{
+    background: #2b2f48 !important;
+    min-width: 210px !important;
+    border-left: 1px solid pink;
+  }
+  .sidebar-transactions {
+    margin-bottom: 40px;
+  }
+  /*NFT*/
+  .nft-buy-button{
+    width: 190px;
+  }
+  /*CRYPTO*/
+  .crypto-card{
+    max-width: 260px !important;
+  }
+  /* CRYPTO-DETAILS*/
+  .chart-card-container{
+    width: 750px;
+  }
+  .coin-stats{
+    font-size: 12px !important;
+    padding: 5px !important;
+  }
+  .coin-stats-name{
+    font-size: 12px !important;
+  }
+  .coin-desc-link p {
+    font-size: 14px !important;
+  }
+  /*NEWS*/
+  .news-image-container > .ant-typography {
+    line-height: 1.2;
+    font-weight: 300;
+    font-size: 13px;
+  }
+}
+
 @media screen and (max-width:800px){
   .app{
       flex-direction: column;
@@ -777,7 +825,7 @@ a:hover{
   justify-content: space-between;
   align-items: center;
   gap: 40px;
-  padding: -40px !important;
+  padding: 0px !important;
 }
 
 .stats-container h2{
@@ -801,7 +849,6 @@ a:hover{
   font-size: 14px !important;
 }
 
-
 .coin-stats{
   display: flex;
   justify-content: space-between;
@@ -809,7 +856,6 @@ a:hover{
   font-size: 14px;
   opacity: 0.9;
   padding: 9px;
-
 }
 
 .coin-stats-name{
@@ -826,6 +872,10 @@ a:hover{
   margin: -15px -10px 20px !important;
 }
 
+.coin-value-statistics-heading {
+  padding: 0px !important;
+}
+
 .coin-value-statistics-heading p{
   font-size: 1rem;
   opacity: 0.9;
@@ -834,7 +884,6 @@ a:hover{
 .coin-desc-link{
   display: flex;
   gap: 40px;
-  margin-top: 40px;
   padding-top: 20px;
 }
 
@@ -854,6 +903,7 @@ a:hover{
 
 .coin-desc-link h3{
   font-weight: 700;
+  color: var(--text-primary);
 }
 
 .coin-desc{
@@ -871,6 +921,11 @@ padding: 0px 20px;
   align-items: center;
   border-bottom: 1px solid var(--border);
   padding: 20px;
+}
+
+.coin-links .ant-row::selection {
+  color: #000 !important;
+  background: #000 !important;
 }
 
 .link-name{

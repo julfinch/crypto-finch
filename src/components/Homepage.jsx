@@ -19,6 +19,7 @@ import Loader from './Loader';
 const { Meta } = Card;
 const { Header, Content, Sider } = Layout;
 const { Search } = Input;
+import useWindowSize from "../hooks/useWindowSize";
 
 const data = [
   {
@@ -48,6 +49,7 @@ const data = [
 ];
 
 const Homepage = () => {
+  const { width } = useWindowSize();
   const [openSettings, setOpenSettings] = useState(false);
   const [openCredits, setOpenCredits] = useState(false);
   const [openChat, setOpenChat] = useState(false);
@@ -124,16 +126,27 @@ const Homepage = () => {
                 <Typography.Title level={4} className="nft-title-heading">My NFT Collections</Typography.Title>
                 <Tabs defaultActiveKey="1" className="nft-tabs">
                 <Tabs.TabPane tab="Top NFTs" key="1">
+                  {width > 1100 ? 
                     <Row gutter={164}>
                       {topData?.map((top) => (
-                      <Col span={4} key={top.name}>
+                      <Col xl={4} lg={5} key={top.name}>
                         <Card className="my-nft-collection" hoverable style={{width: 140, height: 145,}} cover={<img alt={top.name} src={top.image} style={{border: '1px solid transparent',borderRadius: '15px 15px 0 0'}}/>}>
                         <p style={{fontWeight: '500', color: 'cyan'}}>{top.name}</p>
                         <p style={{fontWeight: '200',marginTop: '-5px'}}>Current price: <span style={{fontWeight: '500'}}>{top.price}</span></p>
                         </Card>
                       </Col>
                       ))}
-                    </Row>
+                    </Row> : 
+                      <Row gutter={164}>
+                      {topData.filter((item, index) => index < 3)?.map((top) => (
+                      <Col xl={4} lg={5} key={top.name}>
+                        <Card className="my-nft-collection" hoverable style={{width: 140, height: 145,}} cover={<img alt={top.name} src={top.image} style={{border: '1px solid transparent',borderRadius: '15px 15px 0 0'}}/>}>
+                        <p style={{fontWeight: '500', color: 'cyan'}}>{top.name}</p>
+                        <p style={{fontWeight: '200',marginTop: '-5px'}}>Current price: <span style={{fontWeight: '500'}}>{top.price}</span></p>
+                        </Card>
+                      </Col>
+                      ))}
+                    </Row>}
                   </Tabs.TabPane>
                 <Tabs.TabPane tab="Monkies Club" key="2">
                     <Row gutter={3}>
@@ -244,8 +257,8 @@ const Homepage = () => {
                   <p style={{lineHeight: '1', fontSize: '13px', fontWeight: '400'}}>+2.55%</p>
                 </div>
                 <div className="sidebar-port-buttons">
-                  <Button className="sidebar-button" style={{fontSize: '10px', borderRadius: '6px', width: '90px', border: '0px', color: '#fff'}} icon={<VerticalAlignBottomOutlined style={{fontSize: '14px', marginRight: '-6px'}}/>}>Deposit</Button>
-                  <Button className="sidebar-button" style={{fontSize: '10px', borderRadius: '6px', width: '90px', border: '0px', color: '#fff'}} icon={<VerticalAlignTopOutlined style={{fontSize: '14px', marginRight: '-6px'}} />}>Withdraw</Button>
+                  <Button className="sidebar-button" style={{fontSize: '10px', borderRadius: '6px', width: width > 1100 ? '90px' : '80px', border: '0px', color: '#fff'}} icon={<VerticalAlignBottomOutlined style={{fontSize: '14px', marginLeft: width > 1100 ? '' : '-6px', marginRight: '-6px'}}/>}>Deposit</Button>
+                  <Button className="sidebar-button" style={{fontSize: '10px', borderRadius: '6px', width: width > 1100 ? '90px' : '80px', border: '0px', color: '#fff'}} icon={<VerticalAlignTopOutlined style={{fontSize: '14px', marginLeft: width > 1100 ? '' : '-6px', marginRight: '-6px'}} />}>Withdraw</Button>
                 </div>
               </Card>
             </Col>
