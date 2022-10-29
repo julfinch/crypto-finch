@@ -28,8 +28,8 @@ const Cryptocurrencies = ({ simplified }) => {
 
   return (
     <Col className="cryptocurrencies-container">
-      <Row className="cryptocurrencies-header" style={{margin: '-20px -20px 0 -20px'}}>
-      {!simplified && (
+      {!simplified && (<Row className="cryptocurrencies-header" style={{margin: '-20px -20px 0 -20px'}}>
+      
         <div className="search-crypto" style={{backgroundColor: '#2b2f48'}}>
           <Input
             style={{ color: 'rgba(255, 255, 255, 1)', backgroundColor: '#2a2b47', border: '1px solid #515369',}}
@@ -37,9 +37,9 @@ const Cryptocurrencies = ({ simplified }) => {
             onChange={(e) => setSearchTerm(e.target.value.toLowerCase())}
           />
         </div>
-      )}
-      </Row>
-      <Row gutter={[32, 32]} justify="space-between" className="crypto-card-container">
+      
+      </Row> )}
+      <Row gutter={[32, 32]} justify="space-between" className="crypto-card-container" style={{padding: !simplified ? '55px 15px 0' : '10px 15px 0'}}>
         {cryptos?.map((currency) => (
           <Col
             xs={24}
