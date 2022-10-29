@@ -218,10 +218,10 @@ a:hover{
   padding: 13px 20px;
 }
 .main-heading-card{
-  background-image: url("./images/home_bg.jpg") !important;
+  background: url('./images/home_bg.jpg') !important;
   background-repeat: no-repeat !important;
-  margin-left: 5px !important;
   background-size: cover !important;
+  margin-left: 5px !important;
   background-position: bottom !important; 
   box-shadow: 0.5px 15.5px 14px 1px #131427 !important;
   border-radius: 15px !important;
@@ -314,8 +314,8 @@ a:hover{
 .nft-heading-card{
   background: url('./images/home_bg.jpg') !important;
   background-repeat: no-repeat !important;
-  margin-bottom: 14px !important;
   background-size: cover !important;
+  margin-bottom: 14px !important;
   background-position: bottom !important; 
   box-shadow: 0.5px 15.5px 14px 1px #131427 !important;
   border-radius: 15px !important;
