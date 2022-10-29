@@ -14,7 +14,6 @@ import w1 from "./w1.jpg";
 import w2 from "./w2.jpg";
 import w3 from "./w3.jpg";
 import w4 from "./w4.jpg";
-import w5 from "./w5.jpg";
 import t1 from "./t6.jpg";
 import t2 from "./t2.jpg";
 import t3 from "./t3.jpg";
@@ -84,11 +83,6 @@ export const dawgzData = [
   {
     image: w4,
     name: 'Wave Dawgz #421',
-    price: '4.5 ETH',
-  },
-  {
-    image: w5,
-    name: 'Wave Dawgz #151',
     price: '4.5 ETH',
   },
 ]

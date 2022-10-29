@@ -90,7 +90,7 @@ const Homepage = () => {
                 <Col span={4} style={{height: '45px', display: 'grid', placeContent: 'center', padding: '0px'}}>
                   <p style={{color: '#fff', fontSize: '19px', lineHeight: '0.1'}}>Hi, Lara!</p>
                 </Col>
-                <Col span={8} offset={8}>
+                <Col span={8} offset={width > 1100 ? 8 : 4}>
                   <Search
                     placeholder="Search cryptocurrency, auction, NFTs and more..."
                     allowClear
@@ -137,10 +137,10 @@ const Homepage = () => {
                       </Col>
                       ))}
                     </Row> : 
-                      <Row gutter={164}>
-                      {topData.filter((item, index) => index < 3)?.map((top) => (
-                      <Col xl={4} lg={5} key={top.name}>
-                        <Card className="my-nft-collection" hoverable style={{width: 140, height: 145,}} cover={<img alt={top.name} src={top.image} style={{border: '1px solid transparent',borderRadius: '15px 15px 0 0'}}/>}>
+                      <Row gutter={width > 1100 ? 164 : 3}>
+                      {topData.filter((item, index) => index < 4)?.map((top) => (
+                      <Col xl={4} lg={6} key={top.name}>
+                        <Card className="my-nft-collection" hoverable style={{width: 135, height: 145,}} cover={<img alt={top.name} src={top.image} style={{border: '1px solid transparent',borderRadius: '15px 15px 0 0'}}/>}>
                         <p style={{fontWeight: '500', color: 'cyan'}}>{top.name}</p>
                         <p style={{fontWeight: '200',marginTop: '-5px'}}>Current price: <span style={{fontWeight: '500'}}>{top.price}</span></p>
                         </Card>
@@ -152,7 +152,7 @@ const Homepage = () => {
                     <Row gutter={3}>
                       {monkiesData?.map((monkies) => (
                       <Col span={6} key={monkies.name}>
-                        <Card className="my-nft-collection" hoverable style={{width: 141, height: 145,}} cover={<img alt={monkies.name} src={monkies.image} style={{border: '1px solid transparent',borderRadius: '15px 15px 0 0'}}/>}>
+                        <Card className="my-nft-collection" hoverable style={{width: width > 1100 ? 141 : 135, height: 145,}} cover={<img alt={monkies.name} src={monkies.image} style={{border: '1px solid transparent',borderRadius: '15px 15px 0 0'}}/>}>
                         <p style={{fontWeight: '500', color: 'cyan'}}>{monkies.name}</p>
                         <p style={{fontWeight: '200',marginTop: '-5px'}}>Current price: <span style={{fontWeight: '500'}}>{monkies.price}</span></p>
                         </Card>
@@ -164,7 +164,7 @@ const Homepage = () => {
                     <Row gutter={3}>
                       {zodiacData?.map((zodiac) => (
                       <Col span={6} key={zodiac.name}>
-                        <Card className="my-nft-collection" hoverable style={{width: 140, height: 145,}} cover={<img alt={zodiac.name} src={zodiac.image} style={{border: '1px solid transparent',borderRadius: '15px 15px 0 0'}}/>}>
+                        <Card className="my-nft-collection" hoverable style={{width: width > 1100 ? 140 : 135, height: 145,}} cover={<img alt={zodiac.name} src={zodiac.image} style={{border: '1px solid transparent',borderRadius: '15px 15px 0 0'}}/>}>
                         <p style={{fontWeight: '500', color: 'cyan'}}>{zodiac.name}</p>
                         <p style={{fontWeight: '200',marginTop: '-5px'}}>Current price: <span style={{fontWeight: '500'}}>{zodiac.price}</span></p>
                         </Card>
@@ -173,10 +173,10 @@ const Homepage = () => {
                     </Row>
                   </Tabs.TabPane>
                   <Tabs.TabPane tab="Wave Dawgz" key="4">
-                    <Row gutter={164}>
+                    <Row gutter={3}>
                         {dawgzData?.map((dawgz) => (
-                        <Col span={4} key={dawgz.name}>
-                          <Card className="my-nft-collection" hoverable style={{width: 140, height: 145,}} cover={<img alt={dawgz.name} src={dawgz.image} style={{border: '1px solid transparent',borderRadius: '15px 15px 0 0'}}/>}>
+                        <Col span={6} key={dawgz.name}>
+                          <Card className="my-nft-collection" hoverable style={{width: width > 1100 ? 140 : 135, height: 145,}} cover={<img alt={dawgz.name} src={dawgz.image} style={{border: '1px solid transparent',borderRadius: '15px 15px 0 0'}}/>}>
                           <p style={{fontWeight: '500', color: 'cyan'}}>{dawgz.name}</p>
                           <p style={{fontWeight: '200',marginTop: '-5px'}}>Current price: <span style={{fontWeight: '500'}}>{dawgz.price}</span></p>
                           </Card>
@@ -189,14 +189,14 @@ const Homepage = () => {
               {/* MAIN - ASSET CHARTS */}
               
               <Row gutter={20}>
-                <Col span={12}>
+                <Col xl={12}>
                   <HomeLinechart/>
                 </Col>
-                <Col span={6}>
+                <Col xl={6} lg={6}>
                   <HomeDonut/>
                 </Col>
-                <Col span={6}>
-                  <Card className="home-transactions-card" style={{width: '185px', height: '180px'}}>
+                <Col span={6} className="home-transactions-column">
+                  <Card className="home-transactions-card" style={{width: width > 1100 ? '185px' : '140px', height: width > 1100 ? '180px' : '220px'}}>
                   <Typography.Title level={4} className="transactions-title">Recent Transactions</Typography.Title>
                     <List
                       itemLayout="horizontal"

@@ -105,7 +105,7 @@ const Nft = () => {
                         />
                         }>
                         
-                        <p style={{fontSize: '12px', fontWeight: '500', color: 'cyan'}}>{opensea.name.length > 15 ? `${opensea.name.substring(0, 15)}...` : opensea.name || 'N/A'}</p>
+                        <p style={{fontSize: '12px', fontWeight: '500', color: 'cyan'}}>{opensea?.name || 'N/A'}</p>
                         <p style={{fontWeight: '200',marginTop: '-5px'}}>ID #: <span style={{fontWeight: '500'}}>{opensea.id}</span></p>
                         
                         <div className="nft-collection-data" style={{ width: '155px', height: '500px', position: 'absolute', top: '0px', left: '0px', bottom: '0px', right: '0px'}}></div>

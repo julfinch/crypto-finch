@@ -51,6 +51,7 @@ a:hover{
 .news-container{
   padding: 20px;
 }
+
 .nav-container{
   position: fixed !important;
   left: 0;
@@ -59,6 +60,7 @@ a:hover{
   margin: 0px;
   background-color: rgba(16, 7,71, 1);
   overflow: hidden;
+  z-index: 10000 !important;
 }
 .nav-container .ant-menu-vertical .ant-menu-item, .ant-menu-vertical-left .ant-menu-item, .ant-menu-vertical-right .ant-menu-item, .ant-menu-inline .ant-menu-item, .ant-menu-vertical .ant-menu-submenu-title, .ant-menu-vertical-left .ant-menu-submenu-title, .ant-menu-vertical-right .ant-menu-submenu-title, .ant-menu-inline .ant-menu-submenu-title {
   height: 40px;
@@ -68,6 +70,7 @@ a:hover{
   overflow: hidden;
   line-height: 40px;
   text-overflow: ellipsis;
+  z-index: 10000 !important;
 }
 
 .logo-container{
@@ -714,6 +717,51 @@ a:hover{
   .nav-ads-card{
     width: 210px !important;
   }
+  /*HOME- HEADER*/
+  .header-container{
+    margin-left: -5px !important;
+  }
+  .main-heading-card{
+  background-size: 130% 170% !important;
+  background-position: bottom right !important; 
+}
+  /*HOME - NFT COLLECTION*/
+  .nft-collection-wrapper{
+    margin-bottom: 10px !important;
+  }
+  /* HOME -LINECHART */
+  .home-chart-card{
+    margin-left: 7px !important;
+  }
+  .home-chart-card .ant-card-body{
+    padding: 6px;
+  }
+  .home-chart-card .ant-card-body > canvas{
+    height: 195px !important;
+    width: 375px !important;
+  }
+  /* HOME -DONUT */
+  .home-donut-card{
+    margin-left: -11px !important;
+  }
+  .home-donut-card .ant-card-body > canvas{
+    height: 195px !important;
+    width: 180px !important;
+    margin-left: -5px !important;
+  }
+  /*HOME - RECENT TX*/
+  .home-transactions-column{
+    display: none !important;
+  }
+  .transactions-list-item .ant-list-item-meta-title {
+    color: #fff;
+    font-size: 12px;
+    line-height: 1;
+    margin-bottom: 5px;
+  }
+  .transactions-list-item .ant-list-item-meta-avatar {
+    margin-right: 4px;
+  }
   /* SIDEBAR*/
   .sidebar-container{
     background: #2b2f48 !important;
@@ -721,13 +769,17 @@ a:hover{
     border-left: 1px solid pink;
   }
   .sidebar-transactions {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
   }
   /*NFT*/
   .nft-buy-button{
     width: 190px;
   }
   /*CRYPTO*/
+  .cryptocurrencies-header {
+    width: 840px !important;
+    margin: -20px -20px 0 -30px !important;
+  }
   .crypto-card{
     max-width: 260px !important;
   }
@@ -1034,14 +1086,21 @@ width: 70%;
 .exchange-image{
   margin: 0px 10px !important;
 }
+.cryptocurrencies-header {
+  background: #2b2f48 !important;
+  width: 1080px;
+  height: 50px;
+  position: fixed;
+  z-index: 10;
+}
 .search-crypto{
-  margin: 20px auto 30px auto;
+  margin: 15px auto 50px auto;
   width: 250px;
   background-color: #2b2f48 !important;
 }
 .crypto-card-container{
   min-height: 65vh !important;
-  padding: 15px;
+  padding: 55px 15px 0;
 }
 
 .crypto-card{

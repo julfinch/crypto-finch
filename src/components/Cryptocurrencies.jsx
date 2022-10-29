@@ -28,6 +28,7 @@ const Cryptocurrencies = ({ simplified }) => {
 
   return (
     <Col className="cryptocurrencies-container">
+      <Row className="cryptocurrencies-header" style={{margin: '-20px -20px 0 -20px'}}>
       {!simplified && (
         <div className="search-crypto" style={{backgroundColor: '#2b2f48'}}>
           <Input
@@ -37,6 +38,7 @@ const Cryptocurrencies = ({ simplified }) => {
           />
         </div>
       )}
+      </Row>
       <Row gutter={[32, 32]} justify="space-between" className="crypto-card-container">
         {cryptos?.map((currency) => (
           <Col

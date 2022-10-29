@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card } from 'antd';
 import { Line } from 'react-chartjs-2';
+import useWindowSize from "../hooks/useWindowSize";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -25,6 +26,8 @@ import {
   );
 
 const HomeLinechart = () => {
+  const { width } = useWindowSize();
+
     const options = {
         responsive: true,
         scales: {
@@ -63,7 +66,7 @@ const HomeLinechart = () => {
       
       return (
           <>
-            <Card className="home-chart-card" style={{width: '390px', height: '180px'}}>
+            <Card className="home-chart-card" style={{width: '390px', height: width > 1100 ? '180px' : '210px'}}>
               <Line options={options} data={data}/>
             </Card>
           </>

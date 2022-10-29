@@ -29,7 +29,7 @@ const Navbar = () => {
   }, [screenSize]);
 
   return (
-    <div className="nav-container circles">
+    <div className="nav-container circles" style={{ zIndex: '1000'}}>
       <div className="logo-container">
         <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
           <Avatar src={icon} size="medium" style={{width: 42}}/>

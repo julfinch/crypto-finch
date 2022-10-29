@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card } from 'antd';
 import { Doughnut } from 'react-chartjs-2';
+import useWindowSize from "../hooks/useWindowSize";
 import {
   Chart as ChartJS,
   ArcElement,
@@ -40,9 +41,11 @@ import {
   
 
 const HomeDonut = () => {
+  const { width } = useWindowSize();
+
   return (
     <>
-      <Card className="home-donut-card" style={{width: '185px', height: '180px'}}>
+      <Card className="home-donut-card" style={{width: width > 1100 ? '185px' : '170px', height: width > 1100 ? '180px' : '210px'}}>
         <Doughnut data={data}/>
       </Card> 
     </>
