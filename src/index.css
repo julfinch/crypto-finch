@@ -218,7 +218,7 @@ a:hover{
   padding: 13px 20px;
 }
 .main-heading-card{
-  background: url('./images/home_bg.jpg') !important;
+  background-image: url("./images/home_bg.jpg") !important;
   background-repeat: no-repeat !important;
   margin-left: 5px !important;
   background-size: cover !important;
@@ -721,10 +721,10 @@ a:hover{
   .header-container{
     margin-left: -5px !important;
   }
-  /* .main-heading-card{
+  .main-heading-card{
   background-size: 130% 170% !important;
   background-position: bottom right !important; 
-  } */
+  }
   /*HOME - NFT COLLECTION*/
   .nft-collection-wrapper{
     margin-bottom: 10px !important;
