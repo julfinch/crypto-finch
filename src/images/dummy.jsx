@@ -188,18 +188,6 @@ export const openseaSlugs = [
     slug: "muhammad-ali-thenextlegends-boxers"
   },
   {
-    title: "Bong Bears",
-    slug: "bong bears"
-  },
-  {
-    title: "Beep Boop Box",
-    slug: "beepboopbox"
-  },
-  {
-    title: "Blocksmith Labs",
-    slug: "blocksmith-labs"
-  },
-  {
     title: "The Art of Seasons",
     slug: "the-art-of-seasons"
   },
@@ -223,10 +211,7 @@ export const openseaSlugs = [
     title: "TOMO Genesis",
     slug: "tomo-genesis"
   },
-  {
-    title: "Boner",
-    slug: "boner-solana"
-  },
+  /*
   {
     title: "Wolf Game- Genesis Land",
     slug: "wolf-game-land"
@@ -515,4 +500,5 @@ export const openseaSlugs = [
     title: "Aki Story",
     slug: "akistory"
   },
+  */
 ];
