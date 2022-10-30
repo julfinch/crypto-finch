@@ -5,6 +5,7 @@ import { PlayCircleOutlined, FormOutlined } from '@ant-design/icons';
 import { SiDiscord, SiTwitter } from 'react-icons/si';
 import { BsGlobe, BsFillPersonCheckFill, BsCardImage, BsPiggyBank } from 'react-icons/bs';
 import na from "../images/NA.jpg";
+import nft_heading_bg from "../images/home_bg2.jpg";
 import {  openseaSlugs } from "../images/dummy";
 import Loader from './Loader';
 import { useGetNftsQuery,useGetSlugAssetsQuery, useGetSlugsQuery, useGetCollectionsQuery } from '../services/nftApi';
@@ -72,8 +73,8 @@ const Nft = () => {
                 <Tabs defaultActiveKey="1" className="nft-tabs">
                 <Tabs.TabPane tab="Featured" key="1">
                 {/* MAIN - HEADER CARD */}
-                <Card className="nft-heading-card">
-                  <Row style={{display: 'flex', flexDirection: 'column'}}>
+                <Card className="nft-heading-card" style={{position: 'relative'}}>
+                  <Row style={{display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '2'}}>
                     <Typography.Title level={3} className="main-heading-title">One Stop NFT Marketplace</Typography.Title>
                     <p style={{fontSize: '12px', color: '#fff', lineHeight: '1', marginTop: '-6px'}}>Discover limited-edition digital artwork</p>
                     <p style={{fontSize: '12px', color: '#fff', lineHeight: '1', marginTop: '-6px', marginBottom: '15px'}}>Create, sell and collect yours now!</p>
@@ -82,6 +83,7 @@ const Nft = () => {
                     <Button type="ghost" style={{ fontSize: '11px',borderRadius: '6px', color: '#fff'}}><PlayCircleOutlined />Learn How</Button>
                     </Row>
                   </Row>
+                  <img src={nft_heading_bg} alt="header background" className="main-heading-card-bg"/>
                 </Card>
 
                     <Row gutter={[24, 24]}>

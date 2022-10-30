@@ -3,6 +3,7 @@ import { Col, Row, Badge, Drawer, Avatar, List, Input, Image,Tabs, Layout, Typog
 import { NotificationOutlined, BarChartOutlined, VerticalAlignTopOutlined, VerticalAlignBottomOutlined, SettingOutlined, MessageOutlined, CreditCardOutlined } from '@ant-design/icons';
 import avatar_bg from "../images/avatar_bg.svg";
 import avatar_pic from "../images/avatar_pic.svg";
+import heading_bg from "../images/header_bg2.jpg";
 import icon4 from "../images/Ripple.svg";
 import icon1 from "../images/Polygon.svg";
 import icon2 from "../images/Tron.svg";
@@ -106,8 +107,9 @@ const Homepage = () => {
           <Content className="main-container">
             <Row gutter={[15, 15]}>
               {/* MAIN - HEADER CARD */}
-              <Card className="main-heading-card">
-                <Row style={{display: 'flex', flexDirection: 'column'}}>
+              <Card className="main-heading-card" style={{position: 'relative'}}>
+                
+                <Row style={{display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '2'}}>
                   <Typography.Title level={3} className="main-heading-title">Discover, Collect, and Sell</Typography.Title>
                   <Typography.Title level={3} className="main-heading-title">Extraordinary NFTs</Typography.Title>
                   <Row>
@@ -119,6 +121,7 @@ const Homepage = () => {
                     </Link>
                   </Row>
                 </Row>
+                <img src={heading_bg} alt="header background" className="main-heading-card-bg"/>
               </Card>
               {/* MAIN - NFT COLLECTION */}
               
