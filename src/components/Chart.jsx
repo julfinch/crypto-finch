@@ -2,20 +2,20 @@ import React, { useEffect } from "react";
 import TradingViewWidget, { Themes } from 'react-tradingview-widget';
 
 const Chart = () => {
-  useEffect(() => {
-    const widget = window.TradingView;
-    console.log(widget);
-    // setInterval(() => {
-    //   console.log(widget);
-    //   if (widget) {
-    //     console.log(widget.onready);
+  // useEffect(() => {
+  //   const widget = window.TradingView;
+  //   console.log(widget);
+  //   // setInterval(() => {
+  //   //   console.log(widget);
+  //   //   if (widget) {
+  //   //     console.log(widget.onready);
 
-    //     widget.onready(() => {
-    //       console.log("ready");
-    //     });
-    //   }
-    // }, 100);
-  }, []);
+  //   //     widget.onready(() => {
+  //   //       console.log("ready");
+  //   //     });
+  //   //   }
+  //   // }, 100);
+  // }, []);
 
   return (
     <div className="chart-container">
