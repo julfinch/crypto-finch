@@ -1,8 +1,8 @@
 import React from 'react'
 import { Col, Row, Button } from 'antd';
-import card1 from "../images/card1.svg";
-import card2 from "../images/card2.svg";
-import card3 from "../images/card3.svg";
+import card1 from "../images/card1.png";
+import card2 from "../images/card2.png";
+import card3 from "../images/card3.png";
 
 const Credits = () => {
   return (

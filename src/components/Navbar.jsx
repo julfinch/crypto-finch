@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { HomeOutlined, InfoCircleOutlined, CloseOutlined, GlobalOutlined, LogoutOutlined, DeploymentUnitOutlined, MoneyCollectOutlined, BulbOutlined, FundOutlined, MenuOutlined } from '@ant-design/icons';
 
 import icon from '../images/logo.jpg';
-import card from '../images/card1.svg';
+import card from '../images/card1.png';
 
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(true);

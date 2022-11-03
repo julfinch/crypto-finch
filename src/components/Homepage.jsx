@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Col, Row, Badge, Drawer, Avatar, List, Input, Image,Tabs, Layout, Typography, Card, Button } from 'antd';
 import { NotificationOutlined, BarChartOutlined, VerticalAlignTopOutlined, VerticalAlignBottomOutlined, SettingOutlined, MessageOutlined, CreditCardOutlined } from '@ant-design/icons';
 import avatar_bg from "../images/avatar_bg.svg";
-import avatar_pic from "../images/avatar_pic.svg";
+import avatar_pic from "../images/avatar_pic.png";
 import heading_bg from "../images/header_bg2.jpg";
 import icon4 from "../images/Ripple.svg";
 import icon1 from "../images/Polygon.svg";
