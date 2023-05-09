@@ -12,7 +12,7 @@
 ![](./_readme_img/neublock.png)
 
 ### Installation Errors
-1. Don't forget to create an `.env` file in the root folder.
+1. Don't forget to create an `.env` file in the root folder and register env information into Vercel and your other website hosts.
 1. Upon cloning the project, whenever an error appears about middleware, just paste the code below to the `store.js` inside our app folder. `Uncaught Error: Warning: Middleware for RTK-Query API at reducerPath has not been added to the store. You must add the middleware for RTK-Query to function correctly!`
  ```shell
      # MIDDLEWARE
