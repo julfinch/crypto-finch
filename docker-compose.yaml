@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  crypto-finch:
+    build: ./crypto-finch
+    container_name: react-ui
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./crypto-finch/src:/app/src
+    env_file:
+      - ./crypto-finch/.env
+    stdin_open: true
+    tty: true
