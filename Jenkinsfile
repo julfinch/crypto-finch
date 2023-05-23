@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t julfinch/crypto-finch:latest .'
+        sh 'docker build . -t julfinch/crypto-finch:latest'
       }
     }
     stage('Login') {
