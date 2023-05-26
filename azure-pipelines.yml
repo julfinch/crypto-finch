@@ -1,26 +1,25 @@
+---
+
 # Node.js with React
 
 trigger:
-  branches:
-    include:
-      - main
+- main
 
 pool:
   vmImage: ubuntu-latest
 
-steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '10.x'
-  displayName: 'Install Node.js'
+stages:
+- stage: Build
+  displayName: Build
 
-- script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
+    steps:
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '10.x'
+      displayName: 'Install Node.js'
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
+    - script: |
+        npm install
+        npm run build
+      displayName: 'npm install and build'
+
