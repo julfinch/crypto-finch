@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crypto-finch #The name of the Kubernetes Deployment to be created in the Kubernetes cluster
+  namespace: default #added based on DevOps Hint video Method 1
+  labels:
+    app: crypto-finch
+spec:
+  replicas: 1 #The number of pods to be created in the Kubernetes cluster for the React.js application container
+  #Replicas is originally 2 but changed to 1 based on DevOps Hint video Method 1
+  selector:
+    matchLabels:
+      app: crypto-finch
+  template:
+    metadata:
+      labels:
+        app: crypto-finch 
+    spec:
+      containers:
+      - name: crypto-finch #The name of the react.js application container
+        image: julfinch/crypto-finch:latest #The Docker image for building the React.js application container
+        ports:
+        - containerPort: 3000 #The port for the React.js application   container
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: crypto-finch #The name of the Kubernetes Service to be created in the Kubernetes cluster
+  namespace: default
+spec:
+  selector:
+    app: crypto-finch
+  type: LoadBalancer #Type of the Kubernetes Service
+  ports:
+  - name: http
+    targetPort: 3000 #The port for the React.js application container
+    port: 80 #Service port
